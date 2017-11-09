@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html id="ie8" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !(IE 8) ]><!-->
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<!--<![endif]-->
+<head><link rel="stylesheet" type="text/css" href="http://iapdesign.com/wp-content/cache/minify/d5bf3.css" media="all" />
+
+<meta charset="UTF-8" />	<meta name="viewport" content="width=device-width, initial-scale=1" /> <link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://iapdesign.com/xmlrpc.php" />
+
+<!--[if lt IE 9]>
+<script src="http://iapdesign.com/wp-content/themes/breeze/assets/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.0.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Today i will show you how to create a Superb Web Scraping using Laravel 4. Web Scraping is very well known for extracting data from the web automatically."/>
+<link rel="canonical" href="http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Superb Web Scraping Tutorials using Laravel 4 by Developers.ph" />
+<meta property="og:description" content="Today i will show you how to create a Superb Web Scraping using Laravel 4. Web Scraping is very well known for extracting data from the web automatically." />
+<meta property="og:url" content="http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/" />
+<meta property="og:site_name" content="iAPDesign.com Photoshop Tutorials Phillippines" />
+<meta property="article:tag" content="developers philippines,laravel 4 tutorials for beginners,tutorial,web scrape,web scraping tutorials" />
+<meta property="article:section" content="Laravel 4" />
+<meta property="article:published_time" content="2014-06-01T08:17:04+00:00" />
+<meta property="article:modified_time" content="2014-06-07T04:31:57+00:00" />
+<meta property="og:updated_time" content="2014-06-07T04:31:57+00:00" />
+<meta property="og:image" content="http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3.png" />
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="iAPDesign.com Photoshop Tutorials Phillippines &raquo; Feed" href="http://iapdesign.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iAPDesign.com Photoshop Tutorials Phillippines &raquo; Comments Feed" href="http://iapdesign.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iAPDesign.com Photoshop Tutorials Phillippines &raquo; Superb Web Scraping Tutorials using Laravel 4 by Developers.ph Comments Feed" href="http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/iapdesign.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.8"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+<link rel='stylesheet' id='ssbaFont-css'  href='//fonts.googleapis.com/css?family=Indie+Flower&#038;ver=4.6.8' type='text/css' media='all' />
+
+
+<link rel='stylesheet' id='bluth-googlefonts-css'  href='http://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C400italic%2C700%2C900%7CRoboto+Slab%3A300%2C400%2C700%7CLato%3A300%2C400%2C400italic%2C700%2C900&#038;subset=latin&#038;ver=4.6.8' type='text/css' media='all' />
+
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/3e9c2.js"></script>
+
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FvCommunityNewsJavascript = {"ajaxurl":"http:\/\/iapdesign.com\/wp-admin\/admin-ajax.php","nonce":"064926d779","action":"fvcn-ajax","thumbnail":"1","locale":{"loading":"Loading"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/4b895.js"></script>
+
+
+<script type='text/javascript' src='//apis.google.com/js/plusone.js?ver=1.5.1'></script>
+<link rel='https://api.w.org/' href='http://iapdesign.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://iapdesign.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://iapdesign.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.8" />
+<link rel='shortlink' href='http://iapdesign.com/?p=2679' />
+<link rel="alternate" type="application/json+oembed" href="http://iapdesign.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://iapdesign.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&#038;format=xml" />
+<meta name="generator" content="FV Community News" />
+<style type='text/css'>
+img.lazy { display: none; }
+</style>
+<script>(function(d, s, id){
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) {return;}
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));</script><style type="text/css">	.ssba {
+									
+									
+									
+									
+								}
+								.ssba img
+								{
+									width: 50px !important;
+									padding: 6px;
+									border:  0;
+									box-shadow: none !important;
+									display: inline !important;
+									vertical-align: middle;
+								}
+								.ssba, .ssba a
+								{
+									text-decoration:none;
+									border:0;
+									background: none;
+									font-family: Indie Flower;
+									font-size: 	20px;
+									
+									font-weight: bold;
+								}
+								.fb_iframe_widget span { width: 146px !important; }.ssba_sharecount:after, .ssba_sharecount:before {
+									right: 100%;
+									border: solid transparent;
+									content: " ";
+									height: 0;
+									width: 0;
+									position: absolute;
+									pointer-events: none;
+								}
+								.ssba_sharecount:after {
+									border-color: rgba(224, 221, 221, 0);
+									border-right-color: #f5f5f5;
+									border-width: 5px;
+									top: 50%;
+									margin-top: -5px;
+								}
+								.ssba_sharecount:before {
+									border-color: rgba(85, 94, 88, 0);
+									border-right-color: #e0dddd;
+									border-width: 6px;
+									top: 50%;
+									margin-top: -6px;
+								}
+								.ssba_sharecount {
+									font: 11px Arial, Helvetica, sans-serif;
+
+									padding: 5px;
+									-khtml-border-radius: 6px;
+									-o-border-radius: 6px;
+									-webkit-border-radius: 6px;
+									-moz-border-radius: 6px;
+									border-radius: 6px;
+									position: relative;
+									border: 1px solid #e0dddd;color: #555e58;
+										background: #ffffff;
+									}
+									.ssba_sharecount:after {
+										border-right-color: #ffffff;
+									}</style>
+<style>
+h1,h2,h3,h4,h5{font-family: "Lato",serif;} .widget_calendar table > caption{font-family: "Lato",serif;} body{font-family: "Roboto Slab",Helvetica,sans-serif;} .navbar .nav > li > a{font-family: "Lato",Helvetica,sans-serif;} #masthead{font-family: "Lato",Helvetica,sans-serif;} </style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<title>iAPDesign.com Photoshop Tutorials PhillippinesSuperb Web Scraping Tutorials using Laravel 4 by Developers.ph</title><meta property="og:site_name" content="iAPDesign.com Photoshop Tutorials Phillippines" /><meta property="og:title" content="iAPDesign.com Photoshop Tutorials PhillippinesSuperb Web Scraping Tutorials using Laravel 4 by Developers.ph" /><meta property="og:description" content="Don't be shellfish...00290Good Day Guys, Today I will show you how easy to web scrape to any websites with just few PHP codes no more than 100 lines of cod" /><meta property="og:image" content="" /><meta property="og:type" content="article" /><meta property="og:url" content="http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/"/><style type="text/css">
+		 	.entry-content p, 
+	 	.entry-content ul li, 
+	 	.entry-content p, 
+	 	.entry-content ol li{ 
+	 		font-size: 18px; 
+	 	}	 	.entry-content p, 
+	 	.entry-content ul li, 
+	 	.entry-content p, 
+	 	.entry-content ol li{ 
+	 		line-height:2;
+	 	} 	 	.nav > li.open > a, 
+	 	.nav > li > a:hover, 
+	 	.nav > li.open > a:hover, 
+	 	.nav > li > a:focus, 
+	 	.nav > li.open > a:focus, 
+	 	.nav > li.open > a:focus, 
+	 	.nav > li.open > a span, 
+	 	.dropdown-menu > li > a:hover, 
+	 	.dropdown-menu > li > a:focus { 
+	 		color:#f35353!important;
+	 	} 
+	 	.nav li a:hover .caret, 
+	 	.nav li.open a .caret, 
+	 	.nav li.open a:hover .caret, 
+	 	.nav li.open a:focus .caret{ 
+	 		border-bottom-color:#f35353;
+	 		border-top-color:#f35353;
+	 	}
+	 	.top-color, 
+	 	.top-line, 
+	 	.nav-line,
+	 	.widget_tag_cloud .tagcloud a:hover,
+	 	.gallery-item a:after,
+	 	article.type-portfolio .moretag:hover, 
+	 	article.type-portfolio .more-tag:hover{ 
+	 		background-color:#f35353;
+	 	} 
+	 	.site-footer #footer-body .widget_nav_menu a:hover, 
+	 	.site-footer #footer-body .widget_archive a:hover, 
+	 	.site-footer #footer-body .widget_tag_cloud a:hover, 
+	 	.site-footer #footer-body .widget_recent_entries a:hover, 
+	 	.site-footer #footer-body .widget_recent_comments li a + a:hover,
+	 	.site-footer #footer-body .widget_meta a:hover, 
+	 	.site-footer #footer-body .widget_categories a:hover, 
+	 	.site-footer #footer-body .widget_pages a:hover, 
+	 	#bl_side_tags .bl_tab_tag:hover,
+	 	.pagination > a:hover{ 
+	 		background-color:#f35353;
+	 	} 
+	 	.dropdown-menu{ 
+	 		border-top: 2px solid #f35353;
+	 	} 
+	 	.pagination > a{ 
+	 		border-color: #f35353;
+	 	} 
+	 	.bl_tabs ul li .tab_text a span, 
+	 	a, 
+	 	a:hover, 
+	 	a:focus{ 
+	 		color: #f35353;
+	 	} 	 	body{  background:#ededed; }	 	.entry-title a{ color:#333333; }  	 	.masthead-background, 
+	 	.navbar-inverse .navbar-inner,
+	 	.dropdown-menu,
+	 	.widget-head{ 
+	 		background-color:#FFFFFF; 
+	 	}  	 	#masthead .nav a, 
+	 	#masthead h1, 
+	 	#masthead h1 small{
+	 		color:#555555; 
+	 	} 
+	 	.nav a .caret{ 
+	 		border-bottom-color:#555555; 
+	 		border-top-color:#555555; 
+	 	}  	 	.widget-head{ background: #FFFFFF; }  	 	.widget-head{color:#333333; }  	 	footer.site-footer{ background:#333333 } 		#footer-body .widget-head{color:#FFFFFF; } 	 	#footer-body > div ul li a, 
+	 	footer.site-footer > * { 
+	 		color:#FFFFFF; } 
+		.post-format-standard,
+		.format-standard .post-meta ~ * a, 
+		.format-standard .post-meta a:hover, 
+		.format-standard .entry-title a:hover,
+		.format-standard a.moretag,
+		.format-standard a.more-link{
+			color: #556270;
+		}
+		.tab_standard,  
+		.format-standard a.moretag:hover,
+		.format-standard a.more-link:hover, 
+		.format-standard .entry-image .entry-category a,
+		.format-standard .entry-image > a:after{
+			background-color: #556270;
+		}
+		.format-standard *::selection{
+			color: #FFFFFF;
+			background-color: #556270;
+		}
+		.format-standard *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #556270;
+		}
+		.format-standard a.moretag,
+		.format-standard a.more-link{
+			border-color: #556270;
+		} 
+		.format-standard footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-standard{
+			color: #556270; 
+		}			.format-standard p a, 
+			.format-standard p a:hover span:before, 
+			.format-standard p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #556270; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-gallery,
+		.format-gallery .post-meta ~ * a, 
+		.format-gallery .post-meta a:hover, 
+		.format-gallery .entry-title a:hover,
+		.format-gallery a.moretag,
+		.format-gallery a.more-link{
+			color: #4ECDC4;
+		}
+		.tab_gallery,  
+		.format-gallery a.moretag:hover,
+		.format-gallery a.more-link:hover, 
+		.format-gallery .entry-image .entry-category a,
+		.format-gallery .entry-image > a:after{
+			background-color: #4ECDC4;
+		}
+		.format-gallery *::selection{
+			color: #FFFFFF;
+			background-color: #4ECDC4;
+		}
+		.format-gallery *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #4ECDC4;
+		}
+		.format-gallery a.moretag,
+		.format-gallery a.more-link{
+			border-color: #4ECDC4;
+		} 
+		.format-gallery footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-gallery{
+			color: #4ECDC4; 
+		}			.format-gallery p a, 
+			.format-gallery p a:hover span:before, 
+			.format-gallery p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #4ECDC4; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-image,
+		.format-image .post-meta ~ * a, 
+		.format-image .post-meta a:hover, 
+		.format-image .entry-title a:hover,
+		.format-image a.moretag,
+		.format-image a.more-link{
+			color: #C7F464;
+		}
+		.tab_image,  
+		.format-image a.moretag:hover,
+		.format-image a.more-link:hover, 
+		.format-image .entry-image .entry-category a,
+		.format-image .entry-image > a:after{
+			background-color: #C7F464;
+		}
+		.format-image *::selection{
+			color: #FFFFFF;
+			background-color: #C7F464;
+		}
+		.format-image *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #C7F464;
+		}
+		.format-image a.moretag,
+		.format-image a.more-link{
+			border-color: #C7F464;
+		} 
+		.format-image footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-image{
+			color: #C7F464; 
+		}			.format-image p a, 
+			.format-image p a:hover span:before, 
+			.format-image p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #C7F464; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-quote,
+		.format-quote .post-meta ~ * a, 
+		.format-quote .post-meta a:hover, 
+		.format-quote .entry-title a:hover,
+		.format-quote a.moretag,
+		.format-quote a.more-link{
+			color: #C44D58;
+		}
+		.tab_quote,  
+		.format-quote a.moretag:hover,
+		.format-quote a.more-link:hover, 
+		.format-quote .entry-image .entry-category a,
+		.format-quote .entry-image > a:after{
+			background-color: #C44D58;
+		}
+		.format-quote *::selection{
+			color: #FFFFFF;
+			background-color: #C44D58;
+		}
+		.format-quote *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #C44D58;
+		}
+		.format-quote a.moretag,
+		.format-quote a.more-link{
+			border-color: #C44D58;
+		} 
+		.format-quote footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-quote{
+			color: #C44D58; 
+		}			.format-quote p a, 
+			.format-quote p a:hover span:before, 
+			.format-quote p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #C44D58; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-link,
+		.format-link .post-meta ~ * a, 
+		.format-link .post-meta a:hover, 
+		.format-link .entry-title a:hover,
+		.format-link a.moretag,
+		.format-link a.more-link{
+			color: #FF6B6B;
+		}
+		.tab_link,  
+		.format-link a.moretag:hover,
+		.format-link a.more-link:hover, 
+		.format-link .entry-image .entry-category a,
+		.format-link .entry-image > a:after{
+			background-color: #FF6B6B;
+		}
+		.format-link *::selection{
+			color: #FFFFFF;
+			background-color: #FF6B6B;
+		}
+		.format-link *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #FF6B6B;
+		}
+		.format-link a.moretag,
+		.format-link a.more-link{
+			border-color: #FF6B6B;
+		} 
+		.format-link footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-link{
+			color: #FF6B6B; 
+		}			.format-link p a, 
+			.format-link p a:hover span:before, 
+			.format-link p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #FF6B6B; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-audio,
+		.format-audio .post-meta ~ * a, 
+		.format-audio .post-meta a:hover, 
+		.format-audio .entry-title a:hover,
+		.format-audio a.moretag,
+		.format-audio a.more-link{
+			color: #5EBCF2;
+		}
+		.tab_audio,  
+		.format-audio a.moretag:hover,
+		.format-audio a.more-link:hover, 
+		.format-audio .entry-image .entry-category a,
+		.format-audio .entry-image > a:after{
+			background-color: #5EBCF2;
+		}
+		.format-audio *::selection{
+			color: #FFFFFF;
+			background-color: #5EBCF2;
+		}
+		.format-audio *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #5EBCF2;
+		}
+		.format-audio a.moretag,
+		.format-audio a.more-link{
+			border-color: #5EBCF2;
+		} 
+		.format-audio footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-audio{
+			color: #5EBCF2; 
+		}			.format-audio p a, 
+			.format-audio p a:hover span:before, 
+			.format-audio p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #5EBCF2; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-video,
+		.format-video .post-meta ~ * a, 
+		.format-video .post-meta a:hover, 
+		.format-video .entry-title a:hover,
+		.format-video a.moretag,
+		.format-video a.more-link{
+			color: #A576F7;
+		}
+		.tab_video,  
+		.format-video a.moretag:hover,
+		.format-video a.more-link:hover, 
+		.format-video .entry-image .entry-category a,
+		.format-video .entry-image > a:after{
+			background-color: #A576F7;
+		}
+		.format-video *::selection{
+			color: #FFFFFF;
+			background-color: #A576F7;
+		}
+		.format-video *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #A576F7;
+		}
+		.format-video a.moretag,
+		.format-video a.more-link{
+			border-color: #A576F7;
+		} 
+		.format-video footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-video{
+			color: #A576F7; 
+		}			.format-video p a, 
+			.format-video p a:hover span:before, 
+			.format-video p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #A576F7; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}
+		.post-format-status,
+		.format-status .post-meta ~ * a, 
+		.format-status .post-meta a:hover, 
+		.format-status .entry-title a:hover,
+		.format-status a.moretag,
+		.format-status a.more-link{
+			color: #556270;
+		}
+		.tab_status,  
+		.format-status a.moretag:hover,
+		.format-status a.more-link:hover, 
+		.format-status .entry-image .entry-category a,
+		.format-status .entry-image > a:after{
+			background-color: #556270;
+		}
+		.format-status *::selection{
+			color: #FFFFFF;
+			background-color: #556270;
+		}
+		.format-status *::-moz-selection{
+			color: #FFFFFF;
+			background-color: #556270;
+		}
+		.format-status a.moretag,
+		.format-status a.more-link{
+			border-color: #556270;
+		} 
+		.format-status footer.entry-meta .post-tags li a:hover,
+		.post-format-badge.post-format-status{
+			color: #556270; 
+		}			.format-status p a, 
+			.format-status p a:hover span:before, 
+			.format-status p a:focus span:before, 
+			.widget_tag_cloud .tagcloud a:hover{ 
+				background-color: #556270; 
+				color: #FFFFFF;
+			}			article.type-post p a{
+				margin:0;
+				padding:0;
+				display:inline;
+				font-weight: bold;
+			}
+			article.type-post p a,
+			footer.entry-meta .post-tags li a:hover{
+			  transform: none;
+			  -ms-transform: none;
+			  -webkit-transform: none;
+			}	/* sticky post */
+	article.sticky:before{
+		border-color: #90DB91 #90DB91 transparent;
+	} .sticky .post-format-badge{color: #90DB91};.sticky .post-meta ~ * a, .sticky .post-meta a:hover, .sticky .entry-title a:hover{color: #90DB91;}.container{ width:1170px; }</style>
+<script src='/google_analytics_auto.js'></script></head>
+<body class="single single-post postid-2679 single-format-standard">
+<div class="bl_search_overlay"></div> 
+<div id="page" class="site">
+		<div id="masthead" class="masthead-container header_normal container header_background_color">
+		<header role="banner" class="">
+			<div class="masthead-background box clearfix" style=""></div>
+			<div class="masthead-group clearfix ">
+			    	<!-- Brand and toggle get grouped for better mobile display -->
+			        <div class="navbar-header">
+			            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			                <span class="sr-only">Toggle navigation</span>
+			                <i class="icon-menu-1"></i>
+			            </button> 							<a class="navbar-brand brand-image" href="http://iapdesign.com" title="iAPDesign.com Photoshop Tutorials Phillippines" rel="home"><img src="http://iapdesign.com/wp-content/uploads/2012/09/250_iapdesign_logo.png" alt="iAPDesign.com Photoshop Tutorials Phillippines"><h1><small>Web Design and Development Tutorials from the Philippines</small></h1></a>			        </div>  					<nav class="pull-left" role="navigation"> <div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-main-menu" class="nav navbar-nav"><li id="menu-item-2740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2740"><a title="Home" href="http://iapdesign.com/">Home</a></li>
+<li id="menu-item-1441" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1441 dropdown"><a title="Tutorials" href="http://iapdesign.com/design/tutorials/"><span class="glyphicon Tutorials"></span>&nbsp;Tutorials <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1443" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1443"><a title="Photoshop" href="http://iapdesign.com/design/tutorials/photoshop/"><span class="glyphicon Photoshop"></span>&nbsp;Photoshop</a></li>
+	<li id="menu-item-1442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1442"><a title="Illustrator" href="http://iapdesign.com/design/tutorials/illustrator-tutorials/"><span class="glyphicon Illustrator"></span>&nbsp;Illustrator</a></li>
+	<li id="menu-item-1912" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1912"><a title="CSS3" href="http://iapdesign.com/design/webdev/css3-webdev/">CSS3</a></li>
+	<li id="menu-item-1445" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1445"><a title="CSS" href="http://iapdesign.com/design/webdev/css/"><span class="glyphicon CSS"></span>&nbsp;CSS</a></li>
+	<li id="menu-item-1446" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1446"><a title="HTML5" href="http://iapdesign.com/design/webdev/html5/"><span class="glyphicon HTML5"></span>&nbsp;HTML5</a></li>
+	<li id="menu-item-1447" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1447"><a title="JQuery" href="http://iapdesign.com/design/webdev/jquery/"><span class="glyphicon JQuery"></span>&nbsp;JQuery</a></li>
+	<li id="menu-item-1913" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1913"><a title="PHP" href="http://iapdesign.com/design/webdev/php/">PHP</a></li>
+	<li id="menu-item-2571" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2571"><a title="Twitter Bootstrap" href="http://iapdesign.com/design/twitter-bootstrap/">Twitter Bootstrap</a></li>
+	<li id="menu-item-1444" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-1444"><a title="WebDev" href="http://iapdesign.com/design/webdev/"><span class="glyphicon Web Development"></span>&nbsp;WebDev</a></li>
+</ul>
+</li>
+<li id="menu-item-1435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1435 dropdown"><a title="Inspiration" href="http://iapdesign.com/design/inspiration/"><span class="glyphicon Inspiration"></span>&nbsp;Inspiration <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-2268" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2268"><a title="3DSMax" href="http://iapdesign.com/design/tutorials/3dsmax/">3DSMax</a></li>
+	<li id="menu-item-1432" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1432 dropdown"><a title="Graphics" href="http://iapdesign.com/design/graphics/"><span class="glyphicon Graphics"></span>&nbsp;Graphics</a></li>
+	<li id="menu-item-1436" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1436"><a title="Anime Cosplay" href="http://iapdesign.com/design/inspiration/anime-cosplay/"><span class="glyphicon Anime Cosplay"></span>&nbsp;Anime Cosplay</a></li>
+	<li id="menu-item-2062" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2062"><a title="Art" href="http://iapdesign.com/design/inspiration/art-inspiration/">Art</a></li>
+	<li id="menu-item-2063" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2063"><a title="Character Design" href="http://iapdesign.com/design/inspiration/character-design/">Character Design</a></li>
+	<li id="menu-item-1437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1437"><a title="Design" href="http://iapdesign.com/design/inspiration/design/"><span class="glyphicon Design"></span>&nbsp;Design</a></li>
+	<li id="menu-item-2064" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2064"><a title="Logo" href="http://iapdesign.com/design/inspiration/logo-inspiration/">Logo</a></li>
+	<li id="menu-item-1438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1438"><a title="Photography" href="http://iapdesign.com/design/inspiration/photography-inspiration/"><span class="glyphicon Photography"></span>&nbsp;Photography</a></li>
+	<li id="menu-item-1439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1439"><a title="Vector" href="http://iapdesign.com/design/inspiration/vector/"><span class="glyphicon Vector"></span>&nbsp;Vector</a></li>
+</ul>
+</li>
+<li id="menu-item-1423" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1423 dropdown"><a title="Freebies" href="http://iapdesign.com/design/freebies/"><span class="glyphicon Freebies"></span>&nbsp;Freebies <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1424" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1424"><a title="Brushes" href="http://iapdesign.com/design/freebies/brushes/"><span class="glyphicon Brushes"></span>&nbsp;Brushes</a></li>
+	<li id="menu-item-1426" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1426"><a title="Icons" href="http://iapdesign.com/design/freebies/icons/"><span class="glyphicon Icons"></span>&nbsp;Icons</a></li>
+	<li id="menu-item-2061" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2061"><a title="iPhone" href="http://iapdesign.com/design/freebies/iphone/">iPhone</a></li>
+	<li id="menu-item-1428" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1428"><a title="Photoshop Action" href="http://iapdesign.com/design/freebies/photoshop-action/"><span class="glyphicon Photoshop Action"></span>&nbsp;Photoshop Action</a></li>
+	<li id="menu-item-2228" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2228"><a title="PSD" href="http://iapdesign.com/design/freebies/psd-freebies/">PSD</a></li>
+	<li id="menu-item-1427" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1427"><a title="Patterns" href="http://iapdesign.com/design/freebies/patterns/"><span class="glyphicon Patterns"></span>&nbsp;Patterns</a></li>
+	<li id="menu-item-1429" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1429"><a title="Template" href="http://iapdesign.com/design/freebies/template/"><span class="glyphicon Template"></span>&nbsp;Template</a></li>
+	<li id="menu-item-1430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1430"><a title="Texture" href="http://iapdesign.com/design/freebies/texture/"><span class="glyphicon Texture"></span>&nbsp;Texture</a></li>
+	<li id="menu-item-1425" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1425"><a title="Fonts" href="http://iapdesign.com/design/freebies/fonts/"><span class="glyphicon Fonts"></span>&nbsp;Fonts</a></li>
+</ul>
+</li>
+<li id="menu-item-1448" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1448 dropdown"><a title="Wordpress" href="http://iapdesign.com/design/wordpress/"><span class="glyphicon Wordpress"></span>&nbsp;WordPress <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1449" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1449"><a title="Themes" href="http://iapdesign.com/design/wordpress/themes-wordpress/"><span class="glyphicon Themes"></span>&nbsp;Themes</a></li>
+</ul>
+</li>
+<li id="menu-item-1421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1421 dropdown"><a title="Articles" href="http://iapdesign.com/design/articles/"><span class="glyphicon Articles"></span>&nbsp;Articles <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1594" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1594"><a title="Brochure" href="http://iapdesign.com/design/articles/brochure/">Brochure</a></li>
+	<li id="menu-item-1840" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1840"><a title="E-commerce" href="http://iapdesign.com/design/articles/e-commerce/">E-commerce</a></li>
+	<li id="menu-item-1422" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1422"><a title="Photoshop" href="http://iapdesign.com/design/articles/photoshop-articles/"><span class="glyphicon Photoshop"></span>&nbsp;Photoshop</a></li>
+	<li id="menu-item-2528" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2528"><a title="Typography" href="http://iapdesign.com/design/articles/typography-articles/">Typography</a></li>
+</ul>
+</li>
+<li id="menu-item-2605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2605"><a title="Premium" href="http://iapdesign.com/design/premiums/">Premium</a></li>
+<li id="menu-item-2829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2829"><a title="Write To Us" href="http://iapdesign.com/write-to-us/">Write To Us</a></li>
+<li id="menu-item-2830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2830"><a title="Submit News" href="http://iapdesign.com/submit-news-to-iapdesign/">Submit News</a></li>
+</ul></div>						
+					</nav>
+
+				<!-- 	This file is part of a WordPress theme for sale at ThemeForest.net.
+						See: http://themeforest.net/item/breeze-personal-minimalist-wordpress-blog-theme/5423780
+						Copyright 2013 Bluthemes 	-->
+			
+			</div>
+		</header><!-- #masthead .site-header -->
+	</div>
+	<div id="main" class="container">
+		<div id="primary" class="row right_side">
+
+<div class="above_content col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class=" box pad15"><!-- Simple Share Buttons Adder (6.2.2) simplesharebuttons.com --><div class="ssba ssba-wrap"><div style="text-align:center">Don't be shellfish...<a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook" /></a><span class="ssba_sharecount">0</span><a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;text=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph+"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter" /></a><a data-site="" class="ssba_google_share" href="https://plus.google.com/share?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/google.png" title="Google+" class="ssba ssba-img" alt="Share on Google+" /></a><span class="ssba_sharecount">0</span><a data-site='pinterest' class='ssba_pinterest_share' href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;//assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/pinterest.png" title="Pinterest" class="ssba ssba-img" alt="Pin on Pinterest" /></a><span class="ssba_sharecount">2</span><a data-site="stumbleupon" class="ssba_stumbleupon_share ssba_share_link" href="http://www.stumbleupon.com/submit?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;title=Superb Web Scraping Tutorials using Laravel 4 by Developers.ph"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/stumbleupon.png" title="StumbleUpon" class="ssba ssba-img" alt="Share on StumbleUpon" /></a><span class="ssba_sharecount">9</span><a data-site="reddit" class="ssba_reddit_share" href="http://reddit.com/submit?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;title=Superb Web Scraping Tutorials using Laravel 4 by Developers.ph"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/reddit.png" title="Reddit" class="ssba ssba-img" alt="Share on Reddit" /></a><span class="ssba_sharecount">0</span></div></div><div class="text-center">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3349281124001583";
+/* LeaderBoard_iapDESIGN TOP BAnner */
+google_ad_slot = "3407005340";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<p><script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p></div>
+</div></div>		<div id="content" class="image-comment-on col-xs-12 col-sm-12 col-md-8 col-lg-8 " role="main"> 					<article id="post-2679" class="post-2679 post type-post status-publish format-standard has-post-thumbnail hentry category-laravel-4-webdev tag-developers-philippines tag-laravel-4-tutorials-for-beginners tag-tutorial tag-web-scrape tag-web-scraping-tutorials">		<div class="entry-image" style="">				<div class="image-comment" rel="bookmark" data-href="http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3.png">
+					<img width="1219" height="639" src="http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3.png" class="attachment-original size-original wp-post-image" alt="Superb Web Scraping Tutorials by iAPDesign.com" srcset="http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3.png 1219w, http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3-300x157.png 300w, http://iapdesign.com/wp-content/uploads/2014/06/superbwebscraping-3-1024x536.png 1024w" sizes="(max-width: 1219px) 100vw, 1219px" />				</div>		</div>						<div class="entry-container box clearfix  ">
+
+							<div class="entry-content">
+								<div class="post-title">
+									<h1 class="entry-title">Superb Web Scraping Tutorials using Laravel 4 by Developers.ph</h1>
+									<div class="post-meta">
+										<ul>
+	<li><time class="entry-date updated" datetime="2014-06-01T08:17:04+00:00">01. Jun. 2014</time></li>
+	<li class="divider">/</li>
+	<li><a href="http://iapdesign.com/design/webdev/laravel-4-webdev/" title="View all posts in Laravel 4">Laravel 4</a> </li>	<li class="divider">/</li>
+	<li><a href="http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/#comments">7 Comments</a></li>
+</ul>
+									</div>
+								</div> <!-- Simple Share Buttons Adder (6.2.2) simplesharebuttons.com --><div class="ssba ssba-wrap"><div style="text-align:center">Don't be shellfish...<a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/facebook.png" title="Facebook" class="ssba ssba-img" alt="Share on Facebook" /></a><span class="ssba_sharecount">0</span><a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;text=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph+"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/twitter.png" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter" /></a><a data-site="" class="ssba_google_share" href="https://plus.google.com/share?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/google.png" title="Google+" class="ssba ssba-img" alt="Share on Google+" /></a><span class="ssba_sharecount">0</span><a data-site='pinterest' class='ssba_pinterest_share' href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;//assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/pinterest.png" title="Pinterest" class="ssba ssba-img" alt="Pin on Pinterest" /></a><span class="ssba_sharecount">2</span><a data-site="stumbleupon" class="ssba_stumbleupon_share ssba_share_link" href="http://www.stumbleupon.com/submit?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;title=Superb Web Scraping Tutorials using Laravel 4 by Developers.ph"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/stumbleupon.png" title="StumbleUpon" class="ssba ssba-img" alt="Share on StumbleUpon" /></a><span class="ssba_sharecount">9</span><a data-site="reddit" class="ssba_reddit_share" href="http://reddit.com/submit?url=http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/&amp;title=Superb Web Scraping Tutorials using Laravel 4 by Developers.ph"  target="_blank" ><img src="http://iapdesign.com/wp-content/plugins/simple-share-buttons-adder/buttons/arbenta/reddit.png" title="Reddit" class="ssba ssba-img" alt="Share on Reddit" /></a><span class="ssba_sharecount">0</span></div></div><p>Good Day Guys, Today I will show you how easy to web scrape to any websites with just few PHP codes no more than 100 lines of code.. 🙂</p>
+<p><strong>Web Scraping</strong> is very well known for extracting data from the web automatically. For me, the best example of web scraping is goggle search. Why? Its because every time you post to your blog later on you will find it in the Google search it means that goggle indexes your blog post and its getting crawled every now and then every time you update your post.  <a title="Web Scraping Definition in Wikipedia" href="http://en.wikipedia.org/wiki/Web_scraping" target="_blank">Web scraping</a> is most likely a human automation system, which act as human browsing software without any human interaction.<br />
+<span id="more-2679"></span><br />
+
+<ul><b>Take A Look To Our Previous Awesome Post</b>
+	<li><a title="Amazing Photoshop Tutorial Overload" href="http://iapdesign.com/tutorials/photoshop/amazing-photoshop-tutorial-overload/">Amazing Photoshop Tutorial Overload</a></li>
+
+	<li><a title="20 Useful Javascript Library to Improve Your Applications" href="http://iapdesign.com/webdev/jquery/20-useful-javascript-library-improve-applications/">20 Useful Javascript Library to Improve Your Applications</a></li>
+
+	<li><a title="10 Laravel 4 Tutorials for Beginners" href="http://iapdesign.com/webdev/php/10-laravel-4-tutorials-beginners/">10 Laravel 4 Tutorials for Beginners</a></li>
+
+	<li><a title="How to Create a Resident Evil: Retribution Umbrella Corparation Logo in Photoshop" href="http://iapdesign.com/tutorials/photoshop/how-to-create-a-resident-evil-retribution-umbrella-corparation-logo/">How to Create a Resident Evil: Retribution Umbrella Corparation Logo in Photoshop</a></li>
+
+	<li><a title="30 Inspirational Cinemagraphs Image Effects Collection " href="http://iapdesign.com/inspiration/30-inspirational-cinemagraphs-image-effects-collection/">30 Inspirational Cinemagraphs Image Effects Collection </a></li>
+</ul>
+<div id="attachment_2735" style="width: 1221px" class="wp-caption alignnone"><a href="http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM.png"><img class="lazy wp-image-2735 size-full" src="http://iapdesign.com/wp-content/plugins/jquery-image-lazy-loading/images/grey.gif" data-original="http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM.png" alt="Superb Web Scraping Tutorials Using Laravel 4 By Developers.Ph" width="1211" height="624" srcset="http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM.png 1211w, http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM-300x154.png 300w, http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM-1024x527.png 1024w" sizes="(max-width: 1211px) 100vw, 1211px" /><p class="wp-caption-text"><noscript><img class="wp-image-2735 size-full" src="http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM.png" alt="Superb Web Scraping Tutorials Using Laravel 4 By Developers.Ph" width="1211" height="624" srcset="http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM.png 1211w, http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM-300x154.png 300w, http://iapdesign.com/wp-content/uploads/2014/06/Screen-Shot-2014-06-01-at-4.26.57-PM-1024x527.png 1024w" sizes="(max-width: 1211px) 100vw, 1211px" /></noscript></p></a> Superb Web Scraping Tutorials Using Laravel 4 By Developers.Ph</div></p>
+<div style="text-align: center">
+<h2><a title="Web Scraping Demo" href="http://iapdesign.com/demoTuts/superbwebscraper/public/" target="_blank">DEMO</a><br />
+<a class="classname" title="CLONE FROM GIT" href="https://github.com/mailightkun/superbwebscraping" target="_blank">CLONE FROM GIT</a></h2>
+</div>
+<p>So today, Ill teach you how to build you own <strong>Superb Web Scraping</strong> in couple of minutes.</p>
+<h3>Requirements:</h3>
+<ul>
+<li><a title="Laravel 4 Installation" href="http://laravel.com/docs/quick#installation" target="_blank"><strong>Laravel 4 Framework</strong></a><a title="Laravel 4 Installation" href="http://laravel.com/docs/quick#installation" target="_blank"><br />
+</a></li>
+<li>Greater than or equal to PHP5.3</li>
+<li>Composer (package required)
+<ul>
+<li>&#8220;fabpot/goutte&#8221;: &#8220;v2.0.1&#8221;  = <strong>Goutte</strong> A simple PHP Web Scraper</li>
+<li>Visit packagist.com, click here <a title="Goutte Web Scraper Wrapper" href="https://packagist.org/packages/fabpot/goutte" target="_blank"><strong>Goutte</strong></a></li>
+</ul>
+</li>
+</ul>
+<div class="row pad-xs-5 pad-sm-10 pad-md-20 pad-lg-20" style="min-height:0; padding-top:0; padding-bottom:0;"><div class="col-lg-12 col-md-12 col-sm-12" style="min-height:0;  margin-top:10px; margin-bottom:10px; "></div></div>
+<h3>STEP 1</h3>
+<p>Please download Laravel 4 Application in your computer and setup it, this tutorial is for intermediate. If you’re new to Laravel Framework then I’ll make tutorials on how to setup Laravel 4 framework applications in your computer, just wait for that.</p>
+<p>Go to packagist and search for fabpot/goutte package. It&#8217;s a Simple PHP Web Scraper Wrapper that used Symfony components that is the DomCrawler (Symfony\Component\DomCrawler\Crawler).</p>
+<p>Open up your composer.json file, Add &#8220;fabpot/goutte&#8221;: &#8220;v2.0.1&#8221; after laravel 4 framework inside the require object.</p>
+<pre class="brush: php; title: Add fabpot/goutte inside composer.json file; notranslate" title="Add fabpot/goutte inside composer.json file">
+require&quot;: {
+&quot;laravel/framework&quot;: &quot;4.1.*&quot;,
+&quot;fabpot/goutte&quot;: &quot;v2.0.1&quot;
+}
+</pre>
+<p>Open up your terminal, and run</p>
+<pre class="brush: php; title: ; notranslate" title="">
+composer update
+</pre>
+<p>Once the package is successfully installed in your application, open again your terminal<br />
+and run composer dump-autoload to refresh the Autoloading Classes inside of your composer.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+composer dump-autoload
+</pre>
+<h3>STEP 2</h3>
+<p>So we are done setting up the required packages for our Web Scraping Application, lets move on setting up our Controllers.</p>
+<p>Create new controller inside /app/controllers/ and named it “<strong>WebScraperController.php</strong>”.</p>
+<p>And first, lets define our method classes first so we know the structure of our Class. Keep it mind that it’s much easier to create a methods first before doing any coding’s, and add comments too. Well, that&#8217;s what I always do. Okay, so add this codes to your new controller.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+&lt;?php
+
+class WebScraperController extends BaseController {
+
+	/**
+	 * Defining our Dependency Injection Here.
+	 * or Instantiate new Classes here.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+
+	}
+
+	/**
+	 * This will be used for Outputing our Data
+	 * and Rendering to browser.
+	 *
+	 * @return void
+	 */
+	public function getIndex()
+	{
+
+	}
+
+	/**
+	 * Setup our scraper data. Which includes the url that
+	 * we want to scrape
+	 *
+	 * @param (String) $url = default is NULL
+	 *		  (String) $method = Method Types its either POST || GET
+	 * @return void
+	 */
+	public function setScrapeUrl($url = NULL, $method = 'GET')
+	{
+
+	}
+
+	/**
+	 * This will get all the return Result from our Web Scraper
+	 *
+	 * @return array
+	 */
+	public function getContents()
+	{
+
+	}
+
+	/**
+	 * It will handle all the scraping logic, filtering
+	 * and getting the data from the defined url in our method setScrapeUrl()
+	 *
+	 * @return array
+	 */
+	private function startScraper()
+	{
+
+	}
+
+}
+</pre>
+<p>I will explain first all the methods that i add to our new controller</p>
+<ul>
+<li><span style="font-family: Consolas, Monaco, monospace"><span style="font-size: 12px;line-height: 18px">__construct() &#8211; This will used for instantiating our new classes that we want to used and others. In this part i used a simple design pattern called <strong><a title="Dependency Injection Definition" href="http://code.tutsplus.com/tutorials/dependency-injection-in-php--net-28146" target="_blank">Dependency Injection</a>.</strong><br />
+</span></span></li>
+<li>getIndex() &#8211; We used this as our default rendering View for our application, which used our blade templates and some css styling.</li>
+<li>setScraperUrl() &#8211; Setting up our url that we want to be scrape</li>
+<li>getContents() &#8211; this will be used for getting all the returned result and send to our getIndex() method and render to our user.</li>
+<li>startScraper() &#8211; Handling web scraping logic, filtering, and returning array of results that will be processed by our getIndex() for rendering.</li>
+</ul>
+<h3>STEP 3</h3>
+<p>Now we setup already our class and skeleton methods we will now used the package that we download a while ago that is the Goutte\Client Classes. For more usage of this great tool, you can visit this link:<br />
+<a title="Goutte, a simple PHP Web Scraper" href="https://github.com/fabpot/goutte" target="_blank">Goutte, a simple PHP Web Scraper</a></p>
+<p>From the top of our class, add this two classes using <a title="Namespaces PHP" href="http://www.php.net/manual/en/language.namespaces.importing.php" target="_blank">use keyword</a> in php.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+&lt;?php
+use Goutte\Client;
+use Symfony\Component\DomCrawler\Crawler;
+
+class WebScraperController extends BaseController {
+....
+</pre>
+<h3>STEP 4</h3>
+<p>Now let&#8217;s defined our Class Property, that will be used widely in our whole application class. And initialized Goutte\Client inside of our __construct() method.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+
+use Goutte\Client;
+use Symfony\Component\DomCrawler\Crawler;
+
+class WebScraperController extends BaseController {
+
+        private $client;
+	public  $url;
+	public  $crawler;
+	public  $filters;
+	public  $content = array();
+
+        public function __construct(Client $client)
+	{
+		$this-&gt;client 	= $client;
+	}
+...
+</pre>
+<h3>STEP 5</h3>
+<p>Go to our getIndex() method and lets add our View and setup our url that will be scrape.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+public function getIndex()
+{
+	$this-&gt;url = 'http://code.tutsplus.com';
+	return View::make('scraper');
+}
+</pre>
+<h3>STEP 6</h3>
+<p>We already define our View::make(&#8216;scraper&#8217;), but we don&#8217;t have any views that is created. Lets create that. Go to your /views/ folder and create two files and named it.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+index.blade.php // This will be used as our master layout.
+scraper.blade.php // And this template is used for rendering our scraped data, and extending the master layout.
+</pre>
+<h3>STEP 7</h3>
+<p>For this step, i used bower json for getting our assets, you can check it inside of this codes onced you download it. Its a self explanatory so you can understand it. For more information about bower just visit there website. <a title="Bower - A Package Manager for Web" href="http://bower.io/" target="_blank">Bower A Package manager</a></p>
+<pre class="brush: php; title: ; notranslate" title="">
+&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt; &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt; &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt; &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class=&quot;no-js&quot;&gt; &lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+	&lt;title&gt;@yield('title', 'Superb Web Scraper Tutorial by iAPDesign.com')&lt;/title&gt;
+
+	&lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+	@yield('meta')
+
+	@section('style')
+		 &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ URL::asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}&quot;&gt;
+		 &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ URL::asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}&quot;&gt;
+	@show
+	@yield('stylesheets')
+	&lt;!-- jQuery --&gt;
+	&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;window.jQuery || document.write('&lt;script src=&quot;{{ URL::asset(&quot;assets/vendor/jquery/jquery.min.js&quot;) }}&quot;&gt;&lt;\/script&gt;')&lt;/script&gt;
+	@yield('script.header')
+
+&lt;/head&gt;
+&lt;body&gt;
+
+@yield('content')
+
+@section('script.footer')
+	 &lt;!-- Script Footer --&gt;
+	 &lt;script src=&quot;{{ URL::asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}&quot;&gt;&lt;/script&gt;
+	 &lt;script src=&quot;{{ URL::asset('assets/js/app.js') }}&quot;&gt;&lt;/script&gt;
+@show
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h3>STEP 8</h3>
+<p>Now inside of scraper.blade.php add this code:<br />
+If you notice, i have a section of stylesheet inside of this code, If your wondering why it is below of my section content. dont worry because it will render at the top of our page because in our master template index.blade.php we define &#8220;@yield(&#8216;stylesheets&#8217;)&#8221;.</p>
+<p>For More information about this templating technique you can visit laravel 4 <a title="Templates" href="http://laravel.com/docs/templates" target="_blank">templates documentation</a>.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+@extends('index')
+
+@section('content')
+    &lt;div class=&quot;container-fluid&quot; style=&quot;background-color:#e8e8e8&quot;&gt;
+        &lt;div class=&quot;container container-pad&quot; id=&quot;property-listings&quot;&gt;
+
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;div class=&quot;col-md-12&quot;&gt;
+                &lt;h1&gt;Superb Web Scraper Demo using Laravel 4  by Developers.ph&lt;/h1&gt;
+                &lt;p&gt;Web Scraping Contents&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-sm-12&quot;&gt;
+                @if($contents)
+					@foreach ($contents as $content)
+	                    &lt;!-- Begin Listing: 609 W GRAVERS LN--&gt;
+	                    &lt;div class=&quot;brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing&quot;&gt;
+	                        &lt;div class=&quot;media&quot;&gt;
+	                            &lt;a class=&quot;pull-left&quot; href=&quot;{{ $content['url'] }}&quot; target=&quot;_parent&quot;&gt;
+	                            &lt;img alt=&quot;image&quot; class=&quot;img-responsive&quot; src=&quot;{{ $content['image_preview'] }}&quot;&gt;&lt;/a&gt;
+
+	                            &lt;div class=&quot;clearfix visible-sm&quot;&gt;&lt;/div&gt;
+
+	                            &lt;div class=&quot;media-body fnt-smaller&quot;&gt;
+	                                &lt;a href=&quot;#&quot; target=&quot;_parent&quot;&gt;&lt;/a&gt;
+
+	                                &lt;h4 class=&quot;media-heading&quot;&gt;
+	                                  &lt;a href=&quot;{{ $content['url'] }}&quot; target=&quot;_parent&quot;&gt;
+	                                  	{{ $content['title'] }}
+	                                  &lt;/a&gt;
+	                                &lt;/h4&gt;
+	                                &lt;p class=&quot;hidden-xs&quot;&gt;
+	                                	 {{ $content['short_description'] }}
+	                                &lt;/p&gt;
+	                                &lt;span class=&quot;fnt-smaller fnt-lighter fnt-arial&quot;&gt;Author name: {{ $content['author'] }}&lt;/span&gt;
+	                            &lt;/div&gt;
+	                        &lt;/div&gt;
+	                    &lt;/div&gt;&lt;!-- End Listing--&gt;
+	        		@endforeach
+	        	@else
+	        	&lt;div class=&quot;well text-center&quot;&gt; No Result Found!&lt;/div&gt;
+	        	@endif
+                &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- End container --&gt;
+    &lt;/div&gt;
+@stop
+
+@section('stylesheets')
+
+	&lt;style type=&quot;text/css&quot;&gt;
+		/**** BASE ****/
+		body {
+		    color: #888;
+		    background-color: #e8e8e8;
+		}
+		a {
+		    color: #03a1d1;
+		    text-decoration: none!important;
+		}
+
+		/**** LAYOUT ****/
+		.list-inline&gt;li {
+		    padding: 0 10px 0 0;
+		}
+		.container-pad {
+		    padding: 30px 15px;
+		}
+
+		/**** MODULE ****/
+		.bgc-fff {
+		    background-color: #fff!important;
+		}
+		.box-shad {
+		    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+		    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+		}
+		.brdr {
+		    border: 1px solid #ededed;
+		}
+
+		/* Font changes */
+		.fnt-smaller {
+		    font-size: .9em;
+		}
+		.fnt-lighter {
+		    color: #bbb;
+		}
+
+		/* Padding - Margins */
+		.pad-10 {
+		    padding: 10px!important;
+		}
+		.mrg-0 {
+		    margin: 0!important;
+		}
+		.btm-mrg-10 {
+		    margin-bottom: 10px!important;
+		}
+		.btm-mrg-20 {
+		    margin-bottom: 20px!important;
+		}
+
+		/* Color  */
+		.clr-535353 {
+		    color: #535353;
+		}
+
+		/**** MEDIA QUERIES ****/
+		@media only screen and (max-width: 991px) {
+		    #property-listings .property-listing {
+		        padding: 5px!important;
+		    }
+		    #property-listings .property-listing a {
+		        margin: 0;
+		    }
+		    #property-listings .property-listing .media-body {
+		        padding: 10px;
+		    }
+		}
+
+		@media only screen and (min-width: 992px) {
+		    #property-listings .property-listing img {
+		        max-width: 180px;
+		    }
+		}
+
+	&lt;/style&gt;
+
+@stop
+</pre>
+<h3>STEP 9</h3>
+<p>Now we already setup our views, lets make our getIndex() method some few codes.<br />
+For this demo, i will used <a title="Code Tutplus" href="http://code.tutsplus.com" target="_blank">code.tutplus.com</a> to get the first page of data. And i check the defined classes and attributes of the html so i can get the exact data. Please check the codes below.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+/**
+	 * This will be used for Outputing our Data
+	 * and Rendering to browser.
+	 *
+	 * @return void
+	 */
+	public function getIndex()
+	{
+		$this-&gt;url = 'http://code.tutsplus.com';
+		$this-&gt;setScrapeUrl( $this-&gt;url );
+
+		$this-&gt;filters = [
+			'title'            =&gt; '.posts__post-title',
+			'short_description'=&gt; '.posts__post-summary',
+			'image_preview'    =&gt; '.posts__post-preview img',
+			'author' 	   =&gt; '.posts__post-author-link'
+		];
+		return View::make('scraper')-&gt;with('contents', $this-&gt;getContents());
+	}
+</pre>
+<h3>STEP 10</h3>
+<p>Using our setScrapeUrl() method and create a request to our defined $url that we pass from getIndex() method.</p>
+<p>And setup our getContents() method to handle returned result for Web Scraper.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+/**
+* Setup our scraper data. Which includes the url that
+* we want to scrape
+*
+* @param (String) $url = default is NULL
+*		  (String) $method = Method Types its either POST || GET
+* @return void
+*/
+public function setScrapeUrl($url = NULL, $method = 'GET')
+{
+		$this-&gt;crawler = $this-&gt;client-&gt;request($method, $url);
+		return $this-&gt;crawler;
+}
+
+/**
+* This will get all the return Result from our Web Scraper
+*
+* @return array
+*/
+public function getContents()
+{
+   return $this-&gt;content = $this-&gt;startScraper();
+}
+</pre>
+<h3>STEP 11</h3>
+<p>We&#8217;re almost done, now lets move on to our most important part of this tutorial, its the startScraper() method that handles all the scraping logic and returning all data to our getContents() method.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+/**
+* It will handle all the scraping logic, filtering
+* and getting the data from the defined url in our method setScrapeUrl()
+*
+* @return array
+*/
+private function startScraper()
+{
+		// lets check if our filter has result.
+               // im using CssSelector Dom Components like jquery for selecting data attributes.
+		$countContent = $this-&gt;crawler-&gt;filter('.posts__post-title')-&gt;count();
+
+		if ($countContent) {
+			// loop through in each &quot;.posts--list-large li&quot; to get the data that we need.
+		    $this-&gt;content = $this-&gt;crawler-&gt;filter('.posts--list-large li')-&gt;each(function(Crawler $node, $i) {
+		    	return [
+		           		'title' 			=&gt; $node-&gt;filter($this-&gt;filters['title'])-&gt;text(),
+		           		'url' 				=&gt; $this-&gt;url.$node-&gt;filter($this-&gt;filters['title'])-&gt;attr('href'),
+		           		'short_description' =&gt; $node-&gt;filter($this-&gt;filters['short_description'])-&gt;text(),
+		           		'image_preview' 	=&gt; $node-&gt;filter($this-&gt;filters['image_preview'])-&gt;attr('src'),
+		           		'author' 			=&gt; $node-&gt;filter($this-&gt;filters['author'])-&gt;text()
+		        ];
+		    });
+		}
+		return $this-&gt;content;
+}
+</pre>
+<p><strong>Goutte Class</strong> used filter() method that gets html data attributes that based on DomCrawler used by symfony that manipulates html/xml components and easy extraction of data. Goutte Class can also act as a human that can simulates user click, can submit form etc.<br />
+Right now, im using CssSelector same as jquery selection of classes, but you can used also <strong>filterXPath()</strong> that works also for HTML and XML Dom Manipulation.</p>
+<p>Example you want to select all</p>
+<p>tags inside your body tag. you can do like this.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+$crawler = $this-&gt;crawler-&gt;filter('body &gt; p');
+</pre>
+<h2>Final Codes</h2>
+<p>Now we&#8217;re done, and take a look our final code for our WebScraperController.php.</p>
+<pre class="brush: php; title: ; notranslate" title="">
+&lt;?php
+use Goutte\Client;
+use Symfony\Component\DomCrawler\Crawler;
+
+class WebScraperController extends BaseController {
+
+	private $client;
+	public  $url;
+	public  $crawler;
+	public  $filters;
+	public  $content = array();
+
+	/**
+	 * Defining our Dependency Injection Here.
+	 * or Instantiate new Classes here.
+	 *
+	 * @return void
+	 */
+	public function __construct(Client $client)
+	{
+		$this-&gt;client 	= $client;
+	}
+
+	/**
+	 * This will be used for Outputing our Data
+	 * and Rendering to browser.
+	 *
+	 * @return void
+	 */
+	public function getIndex()
+	{
+		$this-&gt;url = 'http://code.tutsplus.com';
+		$this-&gt;setScrapeUrl( $this-&gt;url );
+
+		$this-&gt;filters = [
+			'title' 			=&gt; '.posts__post-title',
+			'short_description' =&gt; '.posts__post-summary',
+			'image_preview' 	=&gt; '.posts__post-preview img',
+			'author' 			=&gt; '.posts__post-author-link'
+		];
+		return View::make('scraper')-&gt;with('contents', $this-&gt;getContents());
+	}
+
+	/**
+	 * Setup our scraper data. Which includes the url that
+	 * we want to scrape
+	 *
+	 * @param (String) $url = default is NULL
+	 *		  (String) $method = Method Types its either POST || GET
+	 * @return void
+	 */
+	public function setScrapeUrl($url = NULL, $method = 'GET')
+	{
+		$this-&gt;crawler = $this-&gt;client-&gt;request($method, $url);
+		return $this-&gt;crawler;
+	}
+
+	/**
+	 * This will get all the return Result from our Web Scraper
+	 *
+	 * @return array
+	 */
+	public function getContents()
+	{
+		return $this-&gt;content = $this-&gt;startScraper();
+	}
+
+	/**
+	 * It will handle all the scraping logic, filtering
+	 * and getting the data from the defined url in our method setScrapeUrl()
+	 *
+	 * @return array
+	 */
+	private function startScraper()
+	{
+		// lets check if our filter has result.
+		// im using CssSelector Dom Components like jquery for selecting data attributes.
+		$countContent = $this-&gt;crawler-&gt;filter('.posts__post-title')-&gt;count();
+
+		if ($countContent) {
+			// loop through in each &quot;.posts--list-large li&quot; to get the data that we need.
+		    $this-&gt;content = $this-&gt;crawler-&gt;filter('.posts--list-large li')-&gt;each(function(Crawler $node, $i) {
+		    	return [
+		           		'title' 			=&gt; $node-&gt;filter($this-&gt;filters['title'])-&gt;text(),
+		           		'url' 				=&gt; $this-&gt;url.$node-&gt;filter($this-&gt;filters['title'])-&gt;attr('href'),
+		           		'short_description' =&gt; $node-&gt;filter($this-&gt;filters['short_description'])-&gt;text(),
+		           		'image_preview' 	=&gt; $node-&gt;filter($this-&gt;filters['image_preview'])-&gt;attr('src'),
+		           		'author' 			=&gt; $node-&gt;filter($this-&gt;filters['author'])-&gt;text()
+		        ];
+		    });
+		}
+		return $this-&gt;content;
+	}
+
+}
+</pre>
+<h2>Conclusion</h2>
+<p>So there you go, we just completed our Superb Web Scraping Tutorial that you can used for your projects. You can used this as your based to come up with new techniques and modification in the current tutorial.</p>
+<p>Feel free to comment out below for any questions and clarification or Objections. 🙂<br />
+I will answer it all. Peace Out..</p>
+								<footer class="entry-meta clearfix">
+									
+
+<ul class="post-tags clearfix">
+	<li><a href="http://iapdesign.com/creative/developers-philippines/" rel="tag">developers philippines</a> <a href="http://iapdesign.com/creative/laravel-4-tutorials-for-beginners/" rel="tag">laravel 4 tutorials for beginners</a> <a href="http://iapdesign.com/creative/tutorial/" rel="tag">tutorial</a> <a href="http://iapdesign.com/creative/web-scrape/" rel="tag">web scrape</a> <a href="http://iapdesign.com/creative/web-scraping-tutorials/" rel="tag">web scraping tutorials</a></li></ul>
+			<div class="share-story-container">
+				<h4 class="muted">Share story</h4>
+				<ul class="share-story">
+					<li><a class="tips" data-title="Facebook" href="javascript:void(0);" onClick="social_share('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&t=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph');"><i class="icon-facebook-1"></i></a></li>					<li><a class="tips" data-title="Google+" href="javascript:void(0);" onClick="social_share('https://plus.google.com/share?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F');"><i class="icon-gplus-1"></i></a></li>					<li><a class="tips" data-title="Twitter" href="javascript:void(0);" onClick="social_share('http://twitter.com/intent/tweet?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&text=Superb Web Scraping Tutorials using Laravel 4 by Developers.ph');"><i class="icon-twitter-1"></i></a></li>					<li><a class="tips" data-title="Pinterest" href="javascript:void(0);" onClick="social_share('http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&media=http%3A%2F%2Fiapdesign.com%2Fwp-content%2Fuploads%2F2014%2F06%2Fsuperbwebscraping-3-300x157.png');" data-pin-do="buttonPin" data-pin-config="above"><i class="icon-pinterest-1"></i></a></li>					<li><a class="tips" data-title="Reddit" href="javascript:void(0);" onClick="social_share('http://www.reddit.com/submit?url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&amp;title=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph');"><i class="icon-reddit"></i></a></li>					<li><a class="tips" data-title="Linkedin" href="javascript:void(0);" onClick="social_share('http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&title=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph');"><i class="icon-linkedin-1"></i></a></li>					<li><a class="tips" data-title="Delicious" href="javascript:void(0);" onClick="social_share('http://www.delicious.com/post?v=2&amp;url=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F&amp;notes=&amp;tags=&amp;title=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph');"><i class="icon-delicious"></i></a></li>					<li><a class="tips" data-title="Email" href="javascript:void(0);" onClick="social_share('mailto:?subject=Superb+Web+Scraping+Tutorials+using+Laravel+4+by+Developers.ph&amp;body=http%3A%2F%2Fiapdesign.com%2Fwebdev%2Flaravel-4-webdev%2Fsuperb-web-scraping-tutorials-using-laravel-4%2F');"><i class="icon-mail-1"></i></a></li>				</ul>
+			</div>								</footer><!-- .entry-meta -->
+								
+							</div><!-- .entry-content -->
+
+						</div><!-- .entry-container --> 						<div class="author-meta box">
+							<div class="author-image">
+								<img src="http://1.gravatar.com/avatar/dfa4ce32bcef5a4ad168c65648c73a22?s=96&d=wavatar&r=g">							</div>
+							<div class="author-body" style="background-image:url(http://iapdesign.com/wp-content/uploads/2016/03/zoomin.jpg); background-size:cover;">
+
+								<h2 class="vcard author"><span class="fn"><a href="http://iapdesign.com/author/developersph/" title="Posts by Developers PH" rel="author">Developers PH</a></span></h2>
+								<p><a href="http://developers.ph/">Developers.ph</a> - We are Awesome. Tutorials in different programming languages like PHP,HTML5,JAVASCRIPT,CSS/CSS3,JQuery,Jquery Mobile, Responsive Design.</p>
+							</div>
+						</div> 					</article><!-- #post-2679 -->
+						    <div id="related-posts" class="pad35 box">
+	    	<h3>You might also like</h3> 				<a href="http://iapdesign.com/tutorials/photoshop/amazing-photoshop-tutorial-overload/" class="nav-previous">
+										<div class="bgfallback">&nbsp;</div>
+											<span>&nbsp;</span>
+						<div class="tab_icon" style="background-image: url('http://iapdesign.com/wp-content/uploads/2015/02/iapdesign-photoshop-tutorials-1423280222-150x150.jpg');"></div>
+						<h5>Amazing Photoshop Tutorial Overload</h5>
+															</a> 				<a href="http://iapdesign.com/webdev/jquery/20-useful-javascript-library-improve-applications/" class="nav-previous">
+										<div class="bgfallback">&nbsp;</div>
+											<span>&nbsp;</span>
+						<div class="tab_icon" style="background-image: url('');"></div>
+						<h5>20 Useful Javascript Library to Improve Your Applications</h5>
+															</a> 				<a href="http://iapdesign.com/webdev/php/10-laravel-4-tutorials-beginners/" class="nav-previous">
+										<div class="bgfallback">&nbsp;</div>
+											<span>&nbsp;</span>
+						<div class="tab_icon" style="background-image: url('');"></div>
+						<h5>10 Laravel 4 Tutorials for Beginners</h5>
+															</a> 				<a href="http://iapdesign.com/tutorials/photoshop/how-to-create-a-resident-evil-retribution-umbrella-corparation-logo/" class="nav-previous">
+										<div class="bgfallback">&nbsp;</div>
+											<span>&nbsp;</span>
+						<div class="tab_icon" style="background-image: url('http://iapdesign.com/wp-content/uploads/2012/09/resident-evil-5-tuts-umbrella_water_mark-150x150.jpg');"></div>
+						<h5>How to Create a Resident Evil: Retribution Umbrella Corparation Logo in Photoshop</h5>
+															</a> 	    </div><div class="comments-area box pad-xs-5 pad-sm-10 pad-md-35 pad-lg-35">
+        <div id="comments">				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/#respond" style="display:none;">Cancel Reply</a></small></h3>				<form action="http://iapdesign.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-form-comment"><label for="comment">Comment</label><div id="comment-textfield-area"><div id="image-comment-placeholder"></div><textarea id="comment" name="comment" cols="45" rows="5" aria-required="true"></textarea></div></p><input type="hidden" id="comment_image_location" name="image_location" value="" /><input type="hidden" id="blu_comment_score" name="blu_comment_score" value="0" /><p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2679' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a291919773" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="197"/></p>				</form>
+					</div><!-- #respond -->
+		              <h3 class="comments-title">  7 comments</h3>
+              <ol class="commentlist"> 		    <li class="comment even thread-even depth-1" id="li-comment-9425">
+		        <article id="comment-9425" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://2.gravatar.com/avatar/5dc34f25c07124539e18d36757844f41?s=45&#038;d=wavatar&#038;r=g" width="45" height="45" alt="" class="avatar avatar-45wp-user-avatar wp-user-avatar-45 alignnone photo avatar-default" />		                    <h4 class="commenter">Christophe Hubert</h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2014-10-09T04:09:00+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="9425">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="9425">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>Alright, works like a charm&#8230;<br />
+Now I do get hardcore and I scrap a website that has 100s of links.<br />
+I get a timeout from php after 30sec of execution (default)<br />
+Beside increasing the time of php execution in php.ini, do you have any cleaner way to still output the page but prevent the timeout ??</p>
+<p>Cheers !</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=9425#respond' onclick='return addComment.moveForm( "comment-9425", "9425", "respond", "2679" )' aria-label='Reply to Christophe Hubert'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    <ul class="children">
+		    <li class="comment byuser comment-author-anthony-pillos odd alt depth-2" id="li-comment-9426">
+		        <article id="comment-9426" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://iapdesign.com/wp-content/uploads/2016/03/zoomin-80x80.jpg" width="45" height="45" alt="Anthony Pillos" class="avatar avatar-45 wp-user-avatar wp-user-avatar-45 alignnone photo" />		                    <h4 class="commenter"><a href='http://iapdesign.com' rel='external nofollow' class='url'>Anthony Pillos</a></h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2014-10-09T07:35:44+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="9426">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="9426">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>Well, the most cleaner way is to process it in the background.. If you&#8217;re running this scrapping in browser, It will hit the php timeout or it will make your browser crash.. </p>
+<p>If you know how to use laravel queue with the used of Beanstalkd for fast work queue. I&#8217;ve been doing that all time&#8230; </p>
+<p>Even though its running in the background, functionality wise make sure you put a timeout for each run, Example for the first 50 scrape links you should put a delay then run the next 50 again.. so on and so fort&#8230; In that case your IP address will not be banned for that website.. thats an example only.. 🙂</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=9426#respond' onclick='return addComment.moveForm( "comment-9426", "9426", "respond", "2679" )' aria-label='Reply to Anthony Pillos'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		    <li class="comment even thread-odd thread-alt depth-1" id="li-comment-10273">
+		        <article id="comment-10273" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://0.gravatar.com/avatar/c1dbc34a41813cc330613e943adc1bb8?s=45&#038;d=wavatar&#038;r=g" width="45" height="45" alt="" class="avatar avatar-45wp-user-avatar wp-user-avatar-45 alignnone photo avatar-default" />		                    <h4 class="commenter">kreker</h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2015-01-16T10:56:59+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="10273">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-up">1</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="10273">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>Very nice and comprensive tutorial!<br />
+What about lazyimage ? Tried with a page that has lazyimage, so the image will load only on scroll events, the scraper can&#8217;t scroll&#8230;how to solve?<br />
+many thanks</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=10273#respond' onclick='return addComment.moveForm( "comment-10273", "10273", "respond", "2679" )' aria-label='Reply to kreker'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    </li><!-- #comment-## -->
+		    <li class="comment odd alt thread-even depth-1" id="li-comment-10431">
+		        <article id="comment-10431" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://2.gravatar.com/avatar/b2ec5475bc6d86bda9cb0adce9c0b29a?s=45&#038;d=wavatar&#038;r=g" width="45" height="45" alt="" class="avatar avatar-45wp-user-avatar wp-user-avatar-45 alignnone photo avatar-default" />		                    <h4 class="commenter">mansoor</h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2015-02-05T10:43:26+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="10431">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="10431">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>hay i coded exactly described by you but its nto working in using laravel 4.2<br />
+please help me fix it,how to route to this file??<br />
+you didn not mentioend routing </p>
+<p>i m using this<br />
+Route::controller(&#8216;/scraper&#8217;, &#8216;WebScrapperController@getIndex&#8217;);<br />
+it says somethign went wrong</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=10431#respond' onclick='return addComment.moveForm( "comment-10431", "10431", "respond", "2679" )' aria-label='Reply to mansoor'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    <ul class="children">
+		    <li class="comment byuser comment-author-anthony-pillos even depth-2" id="li-comment-10547">
+		        <article id="comment-10547" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://iapdesign.com/wp-content/uploads/2016/03/zoomin-80x80.jpg" width="45" height="45" alt="Anthony Pillos" class="avatar avatar-45 wp-user-avatar wp-user-avatar-45 alignnone photo" />		                    <h4 class="commenter"><a href='http://iapdesign.com' rel='external nofollow' class='url'>Anthony Pillos</a></h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2015-02-09T14:09:53+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="10547">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="10547">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>Just check your logs at app/storage/logs, then you will find whats wrong.. or else just paste the error here so i can help you out.. 🙂</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=10547#respond' onclick='return addComment.moveForm( "comment-10547", "10547", "respond", "2679" )' aria-label='Reply to Anthony Pillos'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-14675">
+		        <article id="comment-14675" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://1.gravatar.com/avatar/d6c2741643f5c2a26140d356779c0577?s=45&#038;d=wavatar&#038;r=g" width="45" height="45" alt="" class="avatar avatar-45wp-user-avatar wp-user-avatar-45 alignnone photo avatar-default" />		                    <h4 class="commenter">Chris</h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2016-03-09T17:16:15+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="14675">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="14675">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>I&#8217;ve spent hours trying to get this to work. I too am unsure about the routing &#8211; just how should routes.php look with this set-up?<br />
+Does it need to be amended in anyway for Laravel 5.2?</p>
+<p>Thanx in advance</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=14675#respond' onclick='return addComment.moveForm( "comment-14675", "14675", "respond", "2679" )' aria-label='Reply to Chris'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    <ul class="children">
+		    <li class="comment byuser comment-author-anthony-pillos even depth-2" id="li-comment-14941">
+		        <article id="comment-14941" class="comment">
+		            <div>
+		                <div class="comment-author clearfix">
+		                    <img src="http://iapdesign.com/wp-content/uploads/2016/03/zoomin-80x80.jpg" width="45" height="45" alt="Anthony Pillos" class="avatar avatar-45 wp-user-avatar wp-user-avatar-45 alignnone photo" />		                    <h4 class="commenter"><a href='http://iapdesign.com' rel='external nofollow' class='url'>Anthony Pillos</a></h4>		                	<p class="comment-time muted"><time class="timeago" datetime="2016-07-06T02:43:55+00:00"></time></p>
+		                	<!-- 
+		                		COMMENT SCORE 
+		                	-->
+		                	<div class="comment-score">
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-down" data-commentid="14941">
+		                			-
+		                		</a>
+		                		<div class="total-score vote-null">0</div> 
+		                		<a href="#" class="blu-comment-vote blu-comment-vote-up" data-commentid="14941">
+		                			<i class="icon-plus-1"></i>
+		                		</a> 
+		                	</div>
+		                	<!-- 
+		                		/ COMMENT SCORE 
+		                	-->
+		                </div><!-- .comment-author .vcard -->
+		                		            </div>
+		            <div class="comment-content clearfix"> 
+		            	<p>Hello Chris.. may i know your problem in the scraping?..</p>
+		            </div>
+		 
+		            <div class="reply">
+		                <a rel='nofollow' class='comment-reply-link' href='http://iapdesign.com/webdev/laravel-4-webdev/superb-web-scraping-tutorials-using-laravel-4/?replytocom=14941#respond' onclick='return addComment.moveForm( "comment-14941", "14941", "respond", "2679" )' aria-label='Reply to Anthony Pillos'>Reply</a>		                		            </div><!-- .reply -->
+		        </article><!-- #comment-## -->
+		 
+		    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+ </ol><!-- .commentlist -->     </div><!-- .row --> </div><!-- #comments .comments-area -->					<a href="http://iapdesign.com/?p=2869&fromnext=1" class="single-pagination animate box" style="position: relative; z-index: 100; background-image: url('http://iapdesign.com/wp-content/uploads/2014/06/20-useful-javascript-library-logo.jpg');">
+						<h3><small>Next Article</small>20 Useful Javascript Library to Improve Your Applications</h3>
+					</a> 		</div><!-- #content .site-content --> 			<aside id="side-bar" class="post-sidebar col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div class="clearfix">
+					<div id="bl_social_counter-3" class="box row bl_social_counter">		
+		<div class="widget-body">
+			
+
+			<ul class="list-unstyled">				<li class="facebook"><a href="http://www.facebook.com/iAPDesign" target="_blank"><div class="bl_wrapper"><i class="icon-facebook-1"></i><h4>901</h4><small>likes</small></div></a></li>				<li class="gplus"><a href="https://plus.google.com/113320938420029459535" target="_blank"><div class="bl_wrapper"><i class="icon-gplus-1"></i><h4>12</h4><small>people</small></div></a></li>				<li class="twitter"><a href="http://www.twitter.com/mailightkun" target="_blank"><div class="bl_wrapper"><i class="icon-twitter-1"></i><h4>564</h4><small>followers</small></div></a></li>
+			</ul>
+		</div></div><div id="bl_google_ads-4" class="box row bl_google_ads">      <div class="widget-body">			<div style="text-align: center;">
+				<div id="google-ads-1" class="google-ads"></div>
+			       
+				<script type="text/javascript">
+
+				    /* Calculate the width of available ad space */
+				    ad = jQuery('#google-ads-1')[0];
+				     
+				    if (ad.getBoundingClientRect().width) {
+				   	 	adWidth = ad.getBoundingClientRect().width; // for modern browsers
+				    } else {
+				    	adWidth = ad.offsetWidth; // for old IE
+				    }
+				     
+				    /* Replace ca-pub-XXX with your AdSense Publisher ID */
+				    google_ad_client = "pub-3349281124001583";
+				     
+				    /* Replace 1234567890 with the AdSense Ad Slot ID */
+				    google_ad_slot = "2762252951";
+				    /* Do not change anything after this line */
+				    if ( adWidth >= 728 )
+				    	google_ad_size = ["728", "90"]; /* Leaderboard 728x90 */
+				    else if ( adWidth >= 468 )
+				    	google_ad_size = ["468", "60"]; /* Banner (468 x 60) */
+				    else if ( adWidth >= 336 )
+				    	google_ad_size = ["336", "280"]; /* Large Rectangle (336 x 280) */
+				    else if ( adWidth >= 300 )
+				    	google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
+				    else if ( adWidth >= 250 )
+				    	google_ad_size = ["250", "250"]; /* Square (250 x 250) */
+				    else if ( adWidth >= 200 )
+				    	google_ad_size = ["200", "200"]; /* Small Square (200 x 200) */
+				    else if ( adWidth >= 180 )
+				    	google_ad_size = ["180", "150"]; /* Small Rectangle (180 x 150) */
+				    else
+				    	google_ad_size = ["125", "125"]; /* Button (125 x 125) */
+				     
+
+				    document.write (
+				    '<ins class="adsbygoogle" style="display:inline-block;width:'
+				    + google_ad_size[0] + 'px;height:'
+				    + google_ad_size[1] + 'px" data-ad-client="'
+				    + google_ad_client + '" data-ad-slot="'
+				    + google_ad_slot + '"></ins>'
+				    );
+				    (adsbygoogle = window.adsbygoogle || []).push({});
+
+				</script>
+				 
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+				</script>
+			</div>      </div></div>					<div id="post_sidebar_sticky" class="sticky_sidebar">
+						<div id="bl_socialbox-2" class="box row bl_socialbox">  		<h3 class="widget-head">Join Us!</h3>    	<div class="widget-body">
+    		<ul class="clearfix">
+	    	<li><a target="_blank" data-title="Facebook" class="tips bl_icon_facebook" href="https://www.facebook.com/iAPDesign?ref=hl"><i class="icon-facebook-1"></i></a></li>	    	<li><a target="_blank" data-title="Twitter" class="tips bl_icon_twitter" href="https://twitter.com/mailightkun"><i class="icon-twitter-1"></i></a></li>	    	<li><a target="_blank" data-title="Google+" class="tips bl_icon_googleplus" href="https://plus.google.com/113320938420029459535"><i class="icon-gplus-1"></i></a></li>	    		    		    		    		    		    	<li><a target="_blank" data-title="Pinterest" class="tips bl_icon_pinterest" href="http://www.pinterest.com/mailightkun/"><i class="icon-pinterest-circled-1"></i></a></li>	    		    		    		    		    	    		</ul>
+    	</div>
+    </div><div id="bl_likebox-3" class="box row bl_likebox">            <div class="widget-body" id="bl_likebox">
+        <iframe src="https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FiAPDesign%3Fref%3Dhl&amp;width=270&amp;height=240&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:240px;" allowTransparency="true"></iframe>
+      </div>
+    </div><div id="bl_google_ads-3" class="box row bl_google_ads">      <div class="widget-body">			<div style="text-align: center;">
+				<div id="google-ads-2" class="google-ads"></div>
+			       
+				<script type="text/javascript">
+
+				    /* Calculate the width of available ad space */
+				    ad = jQuery('#google-ads-2')[0];
+				     
+				    if (ad.getBoundingClientRect().width) {
+				   	 	adWidth = ad.getBoundingClientRect().width; // for modern browsers
+				    } else {
+				    	adWidth = ad.offsetWidth; // for old IE
+				    }
+				     
+				    /* Replace ca-pub-XXX with your AdSense Publisher ID */
+				    google_ad_client = "pub-3349281124001583";
+				     
+				    /* Replace 1234567890 with the AdSense Ad Slot ID */
+				    google_ad_slot = "2762252951";
+				    /* Do not change anything after this line */
+				    if ( adWidth >= 728 )
+				    	google_ad_size = ["728", "90"]; /* Leaderboard 728x90 */
+				    else if ( adWidth >= 468 )
+				    	google_ad_size = ["468", "60"]; /* Banner (468 x 60) */
+				    else if ( adWidth >= 336 )
+				    	google_ad_size = ["336", "280"]; /* Large Rectangle (336 x 280) */
+				    else if ( adWidth >= 300 )
+				    	google_ad_size = ["300", "250"]; /* Medium Rectangle (300 x 250) */
+				    else if ( adWidth >= 250 )
+				    	google_ad_size = ["250", "250"]; /* Square (250 x 250) */
+				    else if ( adWidth >= 200 )
+				    	google_ad_size = ["200", "200"]; /* Small Square (200 x 200) */
+				    else if ( adWidth >= 180 )
+				    	google_ad_size = ["180", "150"]; /* Small Rectangle (180 x 150) */
+				    else
+				    	google_ad_size = ["125", "125"]; /* Button (125 x 125) */
+				     
+
+				    document.write (
+				    '<ins class="adsbygoogle" style="display:inline-block;width:'
+				    + google_ad_size[0] + 'px;height:'
+				    + google_ad_size[1] + 'px" data-ad-client="'
+				    + google_ad_client + '" data-ad-slot="'
+				    + google_ad_slot + '"></ins>'
+				    );
+				    (adsbygoogle = window.adsbygoogle || []).push({});
+
+				</script>
+				 
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+				</script>
+			</div>      </div></div>					</div>
+				</div>
+			</aside> 		</div><!-- #primary -->
+	</div><!-- #main .site-main -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="container">
+			<div class="row-fluid" id="footer-body">
+				<div id="bl_html-4" class="cleanwidget  col-md-6 col-lg-6 pad-md-10 pad-lg-10 bl_html"><h3 class="widget-head">Statistics</h3>			<div class="widget-body"><a href="http://www.alexa.com/siteinfo/http://iapdesign.com/"><script type='text/javascript' src='http://xslt.alexa.com/site_stats/js/t/a?url=http://iapdesign.com/'></script></a>
+<a href="http://www.topblogs.com.ph/web-development/"><img style="border:none;" src="http://www.topblogs.com.ph/track_21505.gif" alt="Web Development & Design - Top Blogs Philippines" /></a></div>
+		</div><div id="fvcommunitynews_listposts-2" class="col-md-6 col-lg-6 pad-md-10 pad-lg-10 fvcn_list_posts_widget"><h3 class="widget-head">FV Community News</h3>
+<ul class="fvcn-list-posts-widget">
+	
+			
+		
+<li id="fvcn-post-3043" class="fvcn-post">
+	<header>
+		<h4><a href="http://iapdesign.com/fv-community-news/post/kick-start-2016-with-50-beginner-friendly-photoshop-tutorials/">Kick-Start 2016 With 50 Beginner-Friendly Photoshop Tutorials</a></h4>
+	</header>
+	
+	<div class="fvcn-post-content">
+				
+		2016 has officially begun, and we here at Envato Tuts+ want to make sure you keep your resolutions by&hellip;	</div>
+</li><!-- #fvcn-post-3043 -->
+		
+			
+		
+<li id="fvcn-post-2863" class="fvcn-post">
+	<header>
+		<h4><a href="http://iapdesign.com/fv-community-news/post/form-validation-in-symfony-2/">Form Validation in Symfony 2</a></h4>
+	</header>
+	
+	<div class="fvcn-post-content">
+				
+		Last time we created a reusable form in Symfony 2. Today, we'll build on to what we've learned, to now&hellip;	</div>
+</li><!-- #fvcn-post-2863 -->
+		
+			
+		
+<li id="fvcn-post-2855" class="fvcn-post">
+	<header>
+		<h4><a href="http://iapdesign.com/fv-community-news/post/fluid-teams-the-way-youll-work-for-the-rest-of-your-career/">Fluid teams: the way you’ll work for the rest of your career</a></h4>
+	</header>
+	
+	<div class="fvcn-post-content">
+				
+		This is not a management article. Well, it kind of is, but please leave your agile-lean-workplace-organization-human-resources&hellip;	</div>
+</li><!-- #fvcn-post-2855 -->
+		
+		
+</ul>
+
+</div>			</div>
+		</div><!-- .site-info -->
+				<div class="row-fluid" id="footer-bottom">
+			Copyright 2017 · iAPDesign.com		</div>	
+			</footer><!-- #colophon .site-footer -->
+</div><!-- #page -->
+<script type="text/javascript">
+(function($){
+  $("img.lazy").show().lazyload({effect: "fadeIn"});
+})(jQuery);
+</script>
+<!-- Popups v1.5.1 - http://wordpress.org/plugins/social-popup/--><style type="text/css">
+#spu-3021 {
+	background-color: #eeeeee;
+	color: #333;	border: 8px solid #555;	width: 600px;
+
+}
+#spu-bg-3021 {
+	opacity: 0.5;
+}
+</style>
+<div class="spu-bg" id="spu-bg-3021"></div>
+<div class="spu-box  spu-centered spu-total-3 spu-gogl" id="spu-3021"
+ data-box-id="3021" data-trigger="seconds"
+ data-trigger-number="5" 
+ data-spuanimation="fade" data-cookie="99" data-test-mode="0" 
+ data-auto-hide="0" data-close-on-conversion="1" data-bgopa="0.5" data-total="3"
+ style="left:-99999px !important;" data-width="600" >
+	<div class="spu-content"><h1 style="text-align: center;">Support us!</h1>
+<p style="text-align: center;">If you like this site please help and make click on any of these buttons!</p>
+<p style="text-align: center;"><div class="spu-facebook spu-shortcode"><div class="fb-like" data-width="" data-href="https://www.facebook.com/iAPDesign" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></div><div class="spu-google spu-shortcode"><div class="g-plusone" data-callback="googleCB" data-onendinteraction="closeGoogle" data-recommendations="false" data-annotation="bubble" data-size="medium" data-href="https://plus.google.com/113320938420029459535"></div></div><div class="spu-twitter spu-shortcode"><a href="https://twitter.com/mailightkun" class="twitter-follow-button" data-show-count="true" data-size="" data-lang=""></a></div></p>
+</div>
+	<span class="spu-close spu-close-popup"><i class="spu-icon spu-icon-close"></i></span>
+	<span class="spu-timer"></span>
+	</div>
+<!-- / Popups Box -->
+<div id="fb-root" class=" fb_reset"></div>
+
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/00b1b.js"></script>
+
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://iapdesign.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://iapdesign.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeMidnight.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = true;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='http://w.sharethis.com/button/st_insights.js'></script>
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/6d926.js"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var spuvar = {"is_admin":"","disable_style":"","safe_mode":"","ajax_mode":"","ajax_url":"http:\/\/iapdesign.com\/wp-admin\/admin-ajax.php","ajax_mode_url":"http:\/\/iapdesign.com\/?spu_action=spu_load&lang=","pid":"2679","is_front_page":"","is_category":"","site_url":"http:\/\/iapdesign.com","is_archive":"","is_search":"","seconds_confirmation_close":"5"};
+var spuvar_social = {"facebook":"1","twitter":"1","google":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/460d3.js"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var blu = {"site_url":"http:\/\/iapdesign.com","ajaxurl":"http:\/\/iapdesign.com\/wp-admin\/admin-ajax.php","menuhover":"1","disable_fixed_header":"1","locale":{"no_search_results":"No results match your search.","searching":"Searching...","search_results":"Search Results","see_all":"see all","loading":"Loading...","no_more_posts":"No more posts","subscribe":"Subscribe!","see_more_articles":"See more articles","no_email_provided":"No email provided","thank_you_for_subscribing":"Thank you for subscribing!"}};
+/* ]]> */
+</script>
+
+
+
+<script type="text/javascript" src="http://iapdesign.com/wp-content/cache/minify/9e6c4.js"></script>
+
+</body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced
+Minified using disk
+Database Caching 5/87 queries in 0.074 seconds using disk
+
+ Served from: iapdesign.com @ 2017-10-31 17:13:29 by W3 Total Cache -->
