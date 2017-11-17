@@ -9,7 +9,8 @@
     @stop
 
 @section('content')
-    <div class="col-md-12 col-sm-12 col-xs-12" style="position: relative; top: 100px">
+    <div class="row" >
+    <div style="position:relative;">
         <button type="button" name="add_experience" id="add_experience" style="position: relative; left: -10px" class="btn btn-app" ><i class="fa fa-plus" ></i> Ajouter</button>
         <div class="x_panel">
             <div class="x_title">
@@ -130,6 +131,7 @@
 
             </div>
         </div>
+    </div>
     </div>
     @stop
 @section('js')

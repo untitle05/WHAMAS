@@ -17,9 +17,9 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('nom')->unique();
-            $table->integer('cibles_id')->unsigned();
+            $table->integer('cible_id')->unsigned();
             
-            $table->foreign('cibles_id')->references('id')->on('cibles')
+            $table->foreign('cible_id')->references('id')->on('cibles')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });

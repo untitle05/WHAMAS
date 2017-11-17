@@ -77,7 +77,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-        @include('footer.block_footer')
+        {{--@include('footer.block_footer')--}}
         <!-- /footer content -->
     </div>
 </div>

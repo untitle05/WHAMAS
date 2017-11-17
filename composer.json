@@ -9,6 +9,8 @@
         "barryvdh/laravel-debugbar": "^2.4",
         "bestmomo/scafold": "^1.0",
         "caouecs/laravel-lang": "~3.0",
+        "consoletvs/charts": "^5.4",
+        "consoletvs/support": "^2.4",
         "fabpot/goutte": "^3.2",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.4",

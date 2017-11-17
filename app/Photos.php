@@ -9,7 +9,7 @@ class Photos extends Model
     protected $table = 'photos';
     public $timestamps = true;
     protected $fillable = [
-        'cibles_id', 'nom'
+        'cible_id', 'nom'
     ];
 
     public function cibles()
