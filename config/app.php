@@ -180,7 +180,6 @@ return [
         Sven\ArtisanView\ArtisanViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
     ],
 
@@ -234,7 +233,6 @@ return [
         'Html'  => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
     ],
 

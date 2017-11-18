@@ -36,6 +36,10 @@ Route::get('listPhotos', 'CibleController@getPhotosCible');
 Route::post('photosCible', 'PhotosCibleController@store');
 Route::get('crawler', 'WebScrapingController@index');
 
-Route::get('stats-intervalle', 'StatsController@stats_intervalle');
+Route::get('stats', 'StatsController@stats_intervalle');
+Route::get('graphiques', function ()
+{
+    return view('stats.index');
+});
 
 //Route::get('/home', 'HomeController@index')->name('home');
