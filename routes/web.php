@@ -26,7 +26,7 @@ Auth::routes();
 
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@update_avatar');
-Route::get('remote', 'WebScraperController@getIndex');
+//Route::get('remote', 'WebScraperController@getIndex');
 Route::resource('experience', 'ExperienceController');
 
 Route::get('listCible', 'CibleController@index');
@@ -35,11 +35,17 @@ Route::post('updateCible', 'CibleController@update');
 Route::get('listPhotos', 'CibleController@getPhotosCible');
 Route::post('photosCible', 'PhotosCibleController@store');
 Route::get('crawler', 'WebScrapingController@index');
+Route::get('download', 'ExperienceController@getDownload');
 
-Route::get('stats', 'StatsController@stats_intervalle');
+Route::get('stats', 'StatsController@data')->name('stats');
 Route::get('graphiques', function ()
 {
-    return view('stats.index');
-});
+    return view('stats.graph');
+})->name('graphs');
+
+Route::get('textuelles', function ()
+{
+    return view('stats.text');
+})->name('texts');
 
 //Route::get('/home', 'HomeController@index')->name('home');

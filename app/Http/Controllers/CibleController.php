@@ -90,7 +90,7 @@ class CibleController extends Controller
             // recuperation de champ modifier
             $cible->numero = $r->numero;
             $cible->compte_whatsapp = $r->compte_whatsapp;
-            $cible->sexe = $r->sexe;
+            $cible->nom = $r->nom;
 
             //enregistrement des modifications
             $cible->save();

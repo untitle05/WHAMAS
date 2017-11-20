@@ -16,9 +16,11 @@ class StatsController extends Controller
      */
     
     
-    public function stats_intervalle()
+    public function data()
     {
 //        dd('stats_intervalle');
+        
+        $totalNumeroCibles = DB::select('SELECT COUNT(*) AS totalNumero FROM cibles');
 
         $totalCompteWhatsapp = DB::select(
             'SELECT COUNT(*)  AS totalCompteWhatsapp
@@ -117,19 +119,22 @@ class StatsController extends Controller
                            GROUP BY photos.cible_id HAVING COUNT(*) > 10) AS result_between_six_and_ten'
         );
         
-        $compteAvecLePlusDePhotos = DB::select('SELECT cibles.numero, COUNT(*) AS totalPhotos 
+        $compteAvecLePlusDePhotos = DB::select('SELECT cibles.numero, experiences.nom_operateur, COUNT(*) AS totalPhotos 
                                                 FROM cibles 
                                                 INNER JOIN photos 
-                                                ON photos.cible_id = cibles.id 
-                                                GROUP BY cibles.numero 
+                                                    ON photos.cible_id = cibles.id
+                                                INNER JOIN experiences_cibles
+                                                    ON cibles.id = experiences_cibles.cibles_id
+                                                INNER JOIN experiences
+                                                    ON experiences.id = experiences_cibles.experiences_id
+                                                GROUP BY cibles.numero, experiences.nom_operateur 
                                                 HAVING COUNT(*) = (SELECT MAX(nbrePhotosParCible) 
                                                                    FROM (SELECT COUNT(*) AS nbrePhotosParCible, cibles.numero 
                                                                    FROM cibles 
                                                                    INNER JOIN photos 
-                                                                      ON cibles.id = photos.cible_id 
+                                                                       ON cibles.id = photos.cible_id 
                                                                    WHERE cibles.compte_whatsapp = "oui" 
-                                                                   GROUP BY cibles.numero) AS test
-                                                                   )'
+                                                                   GROUP BY cibles.numero) AS NbrePhotosParCible)'
                                                                 );
 //        dd($totalCibles[0]->totalCibles - $totalCompteWhatsapp[0]->totalCompteWhatsapp);
         $statsCompteWhatsappOperateur = [
@@ -160,6 +165,17 @@ class StatsController extends Controller
               'TotalCompteWhatsappEntreSixEtDix' => $TotalcomptePhotosEntreSixEtDix[0]->totalCompteAvecPhotosEntreSixEtDix,
               'CompteWhatsappSuperieurDix' => 'Total_Compte_Whatsapp_Superieur_Dix',
               'TotalCompteWhatsappSuperieurDix' => $TotalcomptePhotosSuperieurDix[0]->totalCompteAvecPhotosAuDelaDix
+            ],
+
+            [
+               'TotalPhotos' => 'Total Photos',
+               'NombreTotalPhoto' => $totalPhotos[0]->totalPhotos,
+               'CompteAvecPlusPhotos' => 'Compte Whatsapp Avec le Plus de photos',
+               'Numero' => $compteAvecLePlusDePhotos[0]->numero,
+               'Operateur' => $compteAvecLePlusDePhotos[0]->nom_operateur,
+               'Nombre_Photos' => $compteAvecLePlusDePhotos[0]->totalPhotos,
+               '$totalNumeroCibles' => 'Total Numeros',
+               'Total_numeros' => $totalNumeroCibles[0]->totalNumero
             ]
 
             

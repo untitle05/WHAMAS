@@ -6,7 +6,6 @@
     <link href={{asset("css/fixedHeader.bootstrap.min.css")}} rel="stylesheet">
     <link href={{asset("css/responsive.bootstrap.min.css")}} rel="stylesheet">
     <link href={{asset("css/scroller.bootstrap.min.css")}} rel="stylesheet">
-    <link href={{asset("css/scroller.bootstrap.min.css")}} rel="stylesheet">
     <link href={{asset("css/dropzone.min.css")}} rel="stylesheet">
 
 @stop
@@ -17,18 +16,9 @@
 
         <div class="x_panel">
             <div class="x_title">
-                <h2>Button Example <small>Users</small></h2>
+                <h2>Liste des numeros cibles</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Settings 1</a>
-                            </li>
-                            <li><a href="#">Settings 2</a>
-                            </li>
-                        </ul>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -36,15 +26,12 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <p class="text-muted font-13 m-b-30">
-                    The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
-                </p>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>Numeros cibles</th>
                         <th>Compte Whatsapp</th>
-                        <th>Sexe</th>
+                        <th>Nom cible</th>
                         <th class="noExport">Action</th>
                     </tr>
                     </thead>
@@ -55,7 +42,7 @@
                         <tr id="cibles{{$cible->id}}">
                             <td>{{ $cible->numero }}</td>
                             <td>{{ $cible->compte_whatsapp }}</td>
-                            <td>{{ $cible->sexe }}</td>
+                            <td>{{ $cible->nom }}</td>
                             <td style="width: 15px">
                                 <button class="btn btn-xs btn-info" name="edit" id="edit" data-id="{{ $cible->id }}" title="modifier"><span class="fa fa-pencil"></span></button>
                                 <a class="btn btn-xs btn-dark " href ="{{ action('CibleController@getPhotosCible', ['id' => $cible->id]) }}" title="Voir Photos"><span class="fa fa-file-image-o"></span></a>
@@ -108,19 +95,18 @@
                         </div>
 
                         <div class="form-group form-float">
-                            <div class="form-line{{ $errors->has('sexe') ? ' has-error' : '' }}">
-                                <input type="text" id="sexe" name="sexe" class="form-control" placeholder="Sexe">
-                                @if ($errors->has('sexe'))
+                            <div class="form-line{{ $errors->has('nom') ? ' has-error' : '' }}">
+                                <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom">
+                                @if ($errors->has('nom'))
                                     <span class="help-block">
-                                                <strong>{{ $errors->first('sexe') }}</strong>
+                                                <strong>{{ $errors->first('nom') }}</strong>
                                             </span>
                                 @endif
                             </div>
                         </div>
                         <input type="submit" id="save" value="Modifier" class="btn btn-primary">
                         <button type="button" class="btn btn-default" id="show_dropzone" data-id="{{ $cible->id }}" >Ajouter Photos </button>
-                        <button type="button" class="btn btn-success voir_photos_cible" style="position: relative; right: -259px;" id="gallery" data-id="{{ $cible->id }}" >Voir Photos </button>
-                    </form>
+                        </form>
                 </div>
 
             </div>
@@ -132,7 +118,7 @@
     <div class="col-md-8 col-sm-12 col-xs-12" style="position: relative; left: 200px; top: 200px;">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Dropzone multiple file uploader</h2>
+                <h2>Charger les photos de la cible</h2>
 
                 <div class="clearfix"></div>
                 </div>
@@ -219,12 +205,13 @@
                         var row = '<tr id="cibles' + data.id + '" >' +
                                 '<td>' + data.numero + '</td>' +
                                 '<td>' + data.compte_whatsapp + '</td>' +
-                                '<td>' + data.sexe + '</td>' +
+                                '<td>' + data.nom + '</td>' +
                                 '<td>' +
                                 '<button class="btn btn-xs btn-info" data-id="' + data.id + '" title="modifier"><span class="fa fa-pencil"></span></button> ' +
                                 '</td>' +
                                 '</tr>';
                         $('#cibles' + data.id).replaceWith(row);
+                        window.location.reload();
                         $('#add_cible_modal').modal('hide');
                     }
                 });
@@ -238,7 +225,7 @@
 
                 $('#dropzone_modal').modal('show');
 //                window.location.reload();
-                alert($('#cible_photo_id').val());
+//                alert($('#cible_photo_id').val());
                 $('.close').on('click', function () {
                     window.location.reload();
                 });
@@ -282,7 +269,7 @@
                         console.log(data, 'inside');
                         $('#numero').val(data.numero);
                         $('#compte_whatsapp').val(data.compte_whatsapp);
-                        $('#sexe').val(data.sexe);
+                        $('#nom').val(data.nom);
                         $('#cibleid').val(data.id);
                         $('#cible_photo_id').val(data.id);
                         $('#add_cible_modal').modal('show');

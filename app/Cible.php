@@ -9,7 +9,7 @@ class Cible extends Model
     protected $table = 'cibles';
     public $timestamps = true;
     protected $fillable = [
-        'numero', 'compte_whatsapp', 'sexe'
+        'numero', 'compte_whatsapp', 'nom'
     ];
 
     public function experiences()

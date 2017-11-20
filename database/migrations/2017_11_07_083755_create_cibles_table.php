@@ -18,7 +18,7 @@ class CreateCiblesTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('numero');
             $table->string('compte_whatsapp');
-            $table->string('sexe');
+            $table->string('nom');
         });
     }
 

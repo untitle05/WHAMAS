@@ -35,24 +35,19 @@
 
                         <div>
                             <button class="btn btn-default submit">Log in</button>
-                            <a class="reset_pass" href="{{ route('password.request') }}">Lost your password?</a>
+                            {{--<a class="reset_pass" href="{{ route('password.request') }}">Lost your password?</a>--}}
                         </div>
 
                         <div class="clearfix"></div>
 
                         <div class="separator">
-                            <p class="change_link">New to site?
-                                <a href="#signup" class="to_register"> Create Account </a>
+                            <p class="change_link">
+                                <a href="#signup" class="to_register"> Creer un nouveau compte ? </a>
                             </p>
 
                             <div class="clearfix"></div>
                             <br />
-
-                            <div>
-                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                            </div>
-                        </div>
+                       </div>
                     </form>
         </section>
     </div>
@@ -111,18 +106,13 @@
                 <div class="clearfix"></div>
 
                 <div class="separator">
-                    <p class="change_link">Already a member ?
+                    <p class="change_link">Deja inscrit ?
                         <a href="#signin" class="to_register"> Log in </a>
                     </p>
 
                     <div class="clearfix"></div>
                     <br />
-
-                    <div>
-                        <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                        <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                    </div>
-                </div>
+</div>
             </form>
         </section>
     </div>

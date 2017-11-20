@@ -54,7 +54,16 @@ class PhotosCibleController extends Controller
             ]);
 
             $photo->save();
-            dd($photo);
+
+            $cible =  Cible::find($r->input('cible_photo_id'));
+
+            if( $cible->compte_whatsapp == "---") {
+
+                // recuperation de champ modifier
+                $cible->compte_whatsapp = "oui";
+                $cible->save();
+            }
+//            dd($photo);
             }
 
 

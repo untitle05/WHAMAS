@@ -65,17 +65,19 @@ class ExperienceController extends Controller
 
                 $init_cible = new Cible([
                     'numero' => $image[$i],
-                    'compte_whatsapp' => "null",
-                    'sexe' => "null"
+                    'compte_whatsapp' => "---",
+                    'nom' => "---"
                 ]);
 
                 $init_cible->save();
 
                 $experience->cibles()->attach($init_cible->id);
                 $tableau[$i] = $image[$i];
+                
+                
 
                 if (strtolower($experience->nom_operateur) == "orange"){
-                    $manip = fopen("number_orange.vcf", "a");
+                    $manip = fopen($experience->nom_operateur.$experience->id.".vcf", "a");
                     fwrite($manip, "BEGIN:VCARD
 VERSION:2.1
 FN:O_" . $tableau[$i] . "
@@ -94,7 +96,7 @@ END:VCARD\n \n");
                     fclose($fp);
                 }
                 else{
-                    $manip = fopen("number_mtn.vcf", "a");
+                    $manip = fopen($experience->nom_operateur.$experience->id.".vcf", "a");
                     fwrite($manip, "BEGIN:VCARD
 VERSION:2.1
 FN:M_" . $tableau[$i] . "
@@ -115,12 +117,31 @@ END:VCARD\n \n");
                 $i++;
             }
 
+
+
+
+
+
             return response()->json($experience);
         }
-        
 
 
 
+
+    }
+
+    public function getDownload(Request $r)
+    {
+//        dd($r);
+        if(isset($r->id) && isset($r->operateur)){
+            $file = public_path()."/".$r->operateur.$r->id.".vcf";
+
+            $headers = [
+                'Content-Type' => 'application/vcf',
+            ];
+
+            return Response()->download($file, $r->operateur.$r->id.".vcf", $headers);
+        }
     }
 
     /**

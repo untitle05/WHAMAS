@@ -14,18 +14,9 @@
         <button type="button" name="add_experience" id="add_experience" style="position: relative; left: -10px" class="btn btn-app" ><i class="fa fa-plus" ></i> Ajouter</button>
         <div class="x_panel">
             <div class="x_title">
-                <h2>Button Example <small>Users</small></h2>
+                <h2>Liste des experiences</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Settings 1</a>
-                            </li>
-                            <li><a href="#">Settings 2</a>
-                            </li>
-                        </ul>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -33,9 +24,6 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <p class="text-muted font-13 m-b-30">
-                    The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
-                </p>
                 <table id="datatable-buttons" class="table table-striped table-bordered">
                     <thead>
                     <tr>
@@ -56,8 +44,9 @@
                             <td>{{ $experience->borne_max}}</td>
                             <td>{{ $experience->date_experience }}</td>
                             <td>
-                                <button class="btn btn-xs btn-info" name="edit" id="edit" data-id="{{ $experience->id }}"title="modifier"><span class="fa fa-pencil"></span></button>
-                                <button class="btn btn-xs btn-danger" data-id="{{ $experience->id }}" title="Supprimer"><span class="fa fa-times"></span></button>
+                                {{--<button class="btn btn-xs btn-info" name="edit" id="edit" data-id="{{ $experience->id }}"title="modifier"><span class="fa fa-pencil"></span></button>--}}
+                                {{--<button class="btn btn-xs btn-danger" data-id="{{ $experience->id }}" title="Supprimer"><span class="fa fa-times"></span></button>--}}
+                                <a class="btn btn-xs btn-default"  href ="{{ action('ExperienceController@getDownload', ["id" => $experience->id, "operateur" =>$experience->nom_operateur]) }}" title="Telcharger"><span class="fa fa-download"></span></a>
 
                             </td>
                         </tr>
@@ -82,7 +71,10 @@
                         {{ csrf_field() }}
                        <div class="form-group form-float">
                             <div class="form-line{{ $errors->has('nom_operateur') ? ' has-error' : '' }}">
-                                <input type="text" id="nom_operateur" name="nom_operateur" class="form-control" placeholder="Nom Operateur">
+                                <select type="text" id="nom_operateur" name="nom_operateur" class="form-control" placeholder="operateurs">
+                                    <option value="orange">orange</option>
+                                    <option value="mtn">mtn</option>
+                                    </select>
                                 @if ($errors->has('nom_operateur'))
                                     <span class="help-block">
                                                 <strong>{{ $errors->first('nom_operateur') }}</strong>
@@ -208,12 +200,11 @@
                                     '<td>' + data.borne_max + '</td>' +
                                     '<td>' + data.date_experience + '</td>' +
                                     '<td>  ' +
-                                    '<button class="btn btn-xs btn-info" name="edit" id="edit" data-id="' + data.id + '" title="modifier" ><span class="fa fa-pencil"></span></button> ' +
-                                    '<button class="btn btn-xs btn-danger" data-id="' + data.id + '"title="Supprimer"><span class="fa fa-times"></button>' +
-                                    '</td>' +
+                                    '<a class="btn btn-xs btn-default" data-operateur="' +  data.nom_operateur + '" href ="/download?id=' + data.id + '?operateur=' + data.nom_operateur + '" title="Telcharger"><span class="fa fa-download"></span></a></td>' +
                                     '</tr>';
 
                                 $('tbody').prepend(row);
+                            window.location.reload();
 
                         }
 
